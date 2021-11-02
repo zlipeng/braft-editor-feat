@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("braft-utils"), require("draft-js"), require("immutable"), require("braft-convert"), require("react-dom"), require("braft-finder"), require("draftjs-utils"));
+		module.exports = factory(require("react"), require("braft-utils-v2"), require("draft-js"), require("immutable"), require("braft-convert"), require("react-dom"), require("braft-finder"), require("draftjs-utils"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "braft-utils", "draft-js", "immutable", "braft-convert", "react-dom", "braft-finder", "draftjs-utils"], factory);
+		define(["react", "braft-utils-v2", "draft-js", "immutable", "braft-convert", "react-dom", "braft-finder", "draftjs-utils"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("braft-utils"), require("draft-js"), require("immutable"), require("braft-convert"), require("react-dom"), require("braft-finder"), require("draftjs-utils")) : factory(root["react"], root["braft-utils"], root["draft-js"], root["immutable"], root["braft-convert"], root["react-dom"], root["braft-finder"], root["draftjs-utils"]);
+		var a = typeof exports === 'object' ? factory(require("react"), require("braft-utils-v2"), require("draft-js"), require("immutable"), require("braft-convert"), require("react-dom"), require("braft-finder"), require("draftjs-utils")) : factory(root["react"], root["braft-utils-v2"], root["draft-js"], root["immutable"], root["braft-convert"], root["react-dom"], root["braft-finder"], root["draftjs-utils"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__6__, __WEBPACK_EXTERNAL_MODULE__14__, __WEBPACK_EXTERNAL_MODULE__15__, __WEBPACK_EXTERNAL_MODULE__17__, __WEBPACK_EXTERNAL_MODULE__20__, __WEBPACK_EXTERNAL_MODULE__28__) {
+})(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__6__, __WEBPACK_EXTERNAL_MODULE__14__, __WEBPACK_EXTERNAL_MODULE__15__, __WEBPACK_EXTERNAL_MODULE__17__, __WEBPACK_EXTERNAL_MODULE__21__, __WEBPACK_EXTERNAL_MODULE__28__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -382,6 +382,33 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__17__;
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var objectWithoutPropertiesLoose = __webpack_require__(44);
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutProperties;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -412,7 +439,7 @@ exports.default = _default;
 module.exports = exports.default;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Immutable = __webpack_require__(14);
@@ -503,13 +530,13 @@ module.exports = MultiDecorator;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__20__;
+module.exports = __WEBPACK_EXTERNAL_MODULE__21__;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -538,7 +565,7 @@ function rng() {
 module.exports = exports.default;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -550,7 +577,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = _default;
 exports.URL = exports.DNS = void 0;
 
-var _bytesToUuid = _interopRequireDefault(__webpack_require__(18));
+var _bytesToUuid = _interopRequireDefault(__webpack_require__(19));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -613,67 +640,56 @@ function _default(name, version, hashfunc) {
 }
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
- * @providesModule CharacterMetadata
  * @format
  * 
+ * @emails oncall+draft_js
  */
 
 
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 var _require = __webpack_require__(14),
     Map = _require.Map,
     OrderedSet = _require.OrderedSet,
-    Record = _require.Record;
-
-// Immutable.map is typed such that the value for every key in the map
+    Record = _require.Record; // Immutable.map is typed such that the value for every key in the map
 // must be the same type
 
 
 var EMPTY_SET = OrderedSet();
-
 var defaultRecord = {
   style: EMPTY_SET,
   entity: null
 };
-
 var CharacterMetadataRecord = Record(defaultRecord);
 
-var CharacterMetadata = function (_CharacterMetadataRec) {
-  _inherits(CharacterMetadata, _CharacterMetadataRec);
+var CharacterMetadata = /*#__PURE__*/function (_CharacterMetadataRec) {
+  _inheritsLoose(CharacterMetadata, _CharacterMetadataRec);
 
   function CharacterMetadata() {
-    _classCallCheck(this, CharacterMetadata);
-
-    return _possibleConstructorReturn(this, _CharacterMetadataRec.apply(this, arguments));
+    return _CharacterMetadataRec.apply(this, arguments) || this;
   }
 
-  CharacterMetadata.prototype.getStyle = function getStyle() {
+  var _proto = CharacterMetadata.prototype;
+
+  _proto.getStyle = function getStyle() {
     return this.get('style');
   };
 
-  CharacterMetadata.prototype.getEntity = function getEntity() {
+  _proto.getEntity = function getEntity() {
     return this.get('entity');
   };
 
-  CharacterMetadata.prototype.hasStyle = function hasStyle(style) {
+  _proto.hasStyle = function hasStyle(style) {
     return this.getStyle().includes(style);
   };
 
@@ -690,15 +706,14 @@ var CharacterMetadata = function (_CharacterMetadataRec) {
   CharacterMetadata.applyEntity = function applyEntity(record, entityKey) {
     var withEntity = record.getEntity() === entityKey ? record : record.set('entity', entityKey);
     return CharacterMetadata.create(withEntity);
-  };
-
+  }
   /**
    * Use this function instead of the `CharacterMetadata` constructor.
    * Since most content generally uses only a very small number of
    * style/entity permutations, we can reuse these objects as often as
    * possible.
    */
-
+  ;
 
   CharacterMetadata.create = function create(config) {
     if (!config) {
@@ -708,12 +723,11 @@ var CharacterMetadata = function (_CharacterMetadataRec) {
     var defaultConfig = {
       style: EMPTY_SET,
       entity: null
-    };
+    }; // Fill in unspecified properties, if necessary.
 
-    // Fill in unspecified properties, if necessary.
     var configMap = Map(defaultConfig).merge(config);
-
     var existing = pool.get(configMap);
+
     if (existing) {
       return existing;
     }
@@ -723,34 +737,38 @@ var CharacterMetadata = function (_CharacterMetadataRec) {
     return newCharacter;
   };
 
+  CharacterMetadata.fromJS = function fromJS(_ref) {
+    var style = _ref.style,
+        entity = _ref.entity;
+    return new CharacterMetadata({
+      style: Array.isArray(style) ? OrderedSet(style) : style,
+      entity: Array.isArray(entity) ? OrderedSet(entity) : entity
+    });
+  };
+
   return CharacterMetadata;
 }(CharacterMetadataRecord);
 
 var EMPTY = new CharacterMetadata();
 var pool = Map([[Map(defaultRecord), EMPTY]]);
-
 CharacterMetadata.EMPTY = EMPTY;
-
 module.exports = CharacterMetadata;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
- * @providesModule findRangesImmutable
  * @format
  * 
+ * @emails oncall+draft_js
  */
-
 
 
 /**
@@ -766,24 +784,24 @@ function findRangesImmutable(haystack, areEqualFn, filterFn, foundFn) {
   }
 
   var cursor = 0;
-
   haystack.reduce(function (value, nextValue, nextIndex) {
     if (!areEqualFn(value, nextValue)) {
       if (filterFn(value)) {
         foundFn(cursor, nextIndex);
       }
+
       cursor = nextIndex;
     }
+
     return nextValue;
   });
-
   filterFn(haystack.last()) && foundFn(cursor, haystack.count());
 }
 
 module.exports = findRangesImmutable;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayWithHoles = __webpack_require__(29);
@@ -799,50 +817,20 @@ function _slicedToArray(arr, i) {
 module.exports = _slicedToArray;
 
 /***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var objectWithoutPropertiesLoose = __webpack_require__(44);
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-  var target = objectWithoutPropertiesLoose(source, excluded);
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
-module.exports = _objectWithoutProperties;
-
-/***/ }),
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
- * @providesModule getFragmentFromSelection
  * @format
  * 
+ * @emails oncall+draft_js
  */
-
 
 
 var getContentStateFragment = __webpack_require__(45);
@@ -1038,9 +1026,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _rng = _interopRequireDefault(__webpack_require__(21));
+var _rng = _interopRequireDefault(__webpack_require__(22));
 
-var _bytesToUuid = _interopRequireDefault(__webpack_require__(18));
+var _bytesToUuid = _interopRequireDefault(__webpack_require__(19));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1152,7 +1140,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _v = _interopRequireDefault(__webpack_require__(22));
+var _v = _interopRequireDefault(__webpack_require__(23));
 
 var _md = _interopRequireDefault(__webpack_require__(37));
 
@@ -1406,9 +1394,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _rng = _interopRequireDefault(__webpack_require__(21));
+var _rng = _interopRequireDefault(__webpack_require__(22));
 
-var _bytesToUuid = _interopRequireDefault(__webpack_require__(18));
+var _bytesToUuid = _interopRequireDefault(__webpack_require__(19));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1453,7 +1441,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _v = _interopRequireDefault(__webpack_require__(22));
+var _v = _interopRequireDefault(__webpack_require__(23));
 
 var _sha = _interopRequireDefault(__webpack_require__(40));
 
@@ -1629,39 +1617,34 @@ module.exports = _objectWithoutPropertiesLoose;
 
 "use strict";
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
- * @providesModule getContentStateFragment
  * @format
  * 
+ * @emails oncall+draft_js
  */
 
 
-
 var randomizeBlockMapKeys = __webpack_require__(46);
+
 var removeEntitiesAtEdges = __webpack_require__(49);
 
 var getContentStateFragment = function getContentStateFragment(contentState, selectionState) {
   var startKey = selectionState.getStartKey();
   var startOffset = selectionState.getStartOffset();
   var endKey = selectionState.getEndKey();
-  var endOffset = selectionState.getEndOffset();
-
-  // Edge entities should be stripped to ensure that we don't preserve
+  var endOffset = selectionState.getEndOffset(); // Edge entities should be stripped to ensure that we don't preserve
   // invalid partial entities when the fragment is reused. We do, however,
   // preserve entities that are entirely within the selection range.
-  var contentWithoutEdgeEntities = removeEntitiesAtEdges(contentState, selectionState);
 
+  var contentWithoutEdgeEntities = removeEntitiesAtEdges(contentState, selectionState);
   var blockMap = contentWithoutEdgeEntities.getBlockMap();
   var blockKeys = blockMap.keySeq();
   var startIndex = blockKeys.indexOf(startKey);
   var endIndex = blockKeys.indexOf(endKey) + 1;
-
   return randomizeBlockMapKeys(blockMap.slice(startIndex, endIndex).map(function (block, blockKey) {
     var text = block.getText();
     var chars = block.getCharacterList();
@@ -1699,50 +1682,44 @@ module.exports = getContentStateFragment;
 
 "use strict";
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
- * @providesModule randomizeBlockMapKeys
  * @format
  * 
+ * @emails oncall+draft_js
  */
 
 
-
 var ContentBlockNode = __webpack_require__(47);
-var Immutable = __webpack_require__(14);
 
 var generateRandomKey = __webpack_require__(48);
 
+var Immutable = __webpack_require__(14);
+
 var OrderedMap = Immutable.OrderedMap;
 
-
 var randomizeContentBlockNodeKeys = function randomizeContentBlockNodeKeys(blockMap) {
-  var newKeysRef = {};
+  var newKeysRef = {}; // we keep track of root blocks in order to update subsequent sibling links
 
-  // we keep track of root blocks in order to update subsequent sibling links
-  var lastRootBlock = void 0;
-
+  var lastRootBlock;
   return OrderedMap(blockMap.withMutations(function (blockMapState) {
     blockMapState.forEach(function (block, index) {
       var oldKey = block.getKey();
       var nextKey = block.getNextSiblingKey();
       var prevKey = block.getPrevSiblingKey();
       var childrenKeys = block.getChildKeys();
-      var parentKey = block.getParentKey();
+      var parentKey = block.getParentKey(); // new key that we will use to build linking
 
-      // new key that we will use to build linking
-      var key = generateRandomKey();
+      var key = generateRandomKey(); // we will add it here to re-use it later
 
-      // we will add it here to re-use it later
       newKeysRef[oldKey] = key;
 
       if (nextKey) {
         var nextBlock = blockMapState.get(nextKey);
+
         if (nextBlock) {
           blockMapState.setIn([nextKey, 'prevSibling'], key);
         } else {
@@ -1753,6 +1730,7 @@ var randomizeContentBlockNodeKeys = function randomizeContentBlockNodeKeys(block
 
       if (prevKey) {
         var prevBlock = blockMapState.get(prevKey);
+
         if (prevBlock) {
           blockMapState.setIn([prevKey, 'nextSibling'], key);
         } else {
@@ -1779,6 +1757,7 @@ var randomizeContentBlockNodeKeys = function randomizeContentBlockNodeKeys(block
 
       childrenKeys.forEach(function (childKey) {
         var childBlock = blockMapState.get(childKey);
+
         if (childBlock) {
           blockMapState.setIn([childKey, 'parent'], key);
         } else {
@@ -1818,16 +1797,14 @@ module.exports = randomizeBlockMapKeys;
 
 "use strict";
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
- * @providesModule ContentBlockNode
  * @format
  * 
+ * @emails oncall+draft_js
  *
  * This file is a fork of ContentBlock adding support for nesting references by
  * providing links to children, parent, prevSibling, and nextSibling.
@@ -1837,27 +1814,20 @@ module.exports = randomizeBlockMapKeys;
  */
 
 
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var CharacterMetadata = __webpack_require__(24);
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+var findRangesImmutable = __webpack_require__(25);
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var CharacterMetadata = __webpack_require__(23);
 var Immutable = __webpack_require__(14);
-
-var findRangesImmutable = __webpack_require__(24);
 
 var List = Immutable.List,
     Map = Immutable.Map,
     OrderedSet = Immutable.OrderedSet,
     Record = Immutable.Record,
     Repeat = Immutable.Repeat;
-
-
 var EMPTY_SET = OrderedSet();
-
 var defaultRecord = {
   parent: null,
   characterList: List(),
@@ -1887,7 +1857,6 @@ var decorateCharacterList = function decorateCharacterList(config) {
   var characterList = config.characterList,
       text = config.text;
 
-
   if (text && !characterList) {
     config.characterList = List(Repeat(CharacterMetadata.EMPTY, text.length));
   }
@@ -1895,76 +1864,77 @@ var decorateCharacterList = function decorateCharacterList(config) {
   return config;
 };
 
-var ContentBlockNode = function (_Record) {
-  _inherits(ContentBlockNode, _Record);
+var ContentBlockNode = /*#__PURE__*/function (_ref) {
+  _inheritsLoose(ContentBlockNode, _ref);
 
   function ContentBlockNode() {
     var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultRecord;
 
-    _classCallCheck(this, ContentBlockNode);
-
-    return _possibleConstructorReturn(this, _Record.call(this, decorateCharacterList(props)));
+    /* eslint-disable-next-line constructor-super */
+    return _ref.call(this, decorateCharacterList(props)) || this;
   }
 
-  ContentBlockNode.prototype.getKey = function getKey() {
+  var _proto = ContentBlockNode.prototype;
+
+  _proto.getKey = function getKey() {
     return this.get('key');
   };
 
-  ContentBlockNode.prototype.getType = function getType() {
+  _proto.getType = function getType() {
     return this.get('type');
   };
 
-  ContentBlockNode.prototype.getText = function getText() {
+  _proto.getText = function getText() {
     return this.get('text');
   };
 
-  ContentBlockNode.prototype.getCharacterList = function getCharacterList() {
+  _proto.getCharacterList = function getCharacterList() {
     return this.get('characterList');
   };
 
-  ContentBlockNode.prototype.getLength = function getLength() {
+  _proto.getLength = function getLength() {
     return this.getText().length;
   };
 
-  ContentBlockNode.prototype.getDepth = function getDepth() {
+  _proto.getDepth = function getDepth() {
     return this.get('depth');
   };
 
-  ContentBlockNode.prototype.getData = function getData() {
+  _proto.getData = function getData() {
     return this.get('data');
   };
 
-  ContentBlockNode.prototype.getInlineStyleAt = function getInlineStyleAt(offset) {
+  _proto.getInlineStyleAt = function getInlineStyleAt(offset) {
     var character = this.getCharacterList().get(offset);
     return character ? character.getStyle() : EMPTY_SET;
   };
 
-  ContentBlockNode.prototype.getEntityAt = function getEntityAt(offset) {
+  _proto.getEntityAt = function getEntityAt(offset) {
     var character = this.getCharacterList().get(offset);
     return character ? character.getEntity() : null;
   };
 
-  ContentBlockNode.prototype.getChildKeys = function getChildKeys() {
+  _proto.getChildKeys = function getChildKeys() {
     return this.get('children');
   };
 
-  ContentBlockNode.prototype.getParentKey = function getParentKey() {
+  _proto.getParentKey = function getParentKey() {
     return this.get('parent');
   };
 
-  ContentBlockNode.prototype.getPrevSiblingKey = function getPrevSiblingKey() {
+  _proto.getPrevSiblingKey = function getPrevSiblingKey() {
     return this.get('prevSibling');
   };
 
-  ContentBlockNode.prototype.getNextSiblingKey = function getNextSiblingKey() {
+  _proto.getNextSiblingKey = function getNextSiblingKey() {
     return this.get('nextSibling');
   };
 
-  ContentBlockNode.prototype.findStyleRanges = function findStyleRanges(filterFn, callback) {
+  _proto.findStyleRanges = function findStyleRanges(filterFn, callback) {
     findRangesImmutable(this.getCharacterList(), haveEqualStyle, filterFn, callback);
   };
 
-  ContentBlockNode.prototype.findEntityRanges = function findEntityRanges(filterFn, callback) {
+  _proto.findEntityRanges = function findEntityRanges(filterFn, callback) {
     findRangesImmutable(this.getCharacterList(), haveEqualEntity, filterFn, callback);
   };
 
@@ -1979,28 +1949,27 @@ module.exports = ContentBlockNode;
 
 "use strict";
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
- * @providesModule generateRandomKey
  * @format
  * 
+ * @emails oncall+draft_js
  */
-
 
 
 var seenKeys = {};
 var MULTIPLIER = Math.pow(2, 24);
 
 function generateRandomKey() {
-  var key = void 0;
+  var key;
+
   while (key === undefined || seenKeys.hasOwnProperty(key) || !isNaN(+key)) {
     key = Math.floor(Math.random() * MULTIPLIER).toString(32);
   }
+
   seenKeys[key] = true;
   return key;
 }
@@ -2013,31 +1982,27 @@ module.exports = generateRandomKey;
 
 "use strict";
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
- * @providesModule removeEntitiesAtEdges
  * @format
  * 
+ * @emails oncall+draft_js
  */
 
 
+var CharacterMetadata = __webpack_require__(24);
 
-var CharacterMetadata = __webpack_require__(23);
+var findRangesImmutable = __webpack_require__(25);
 
-var findRangesImmutable = __webpack_require__(24);
 var invariant = __webpack_require__(50);
 
 function removeEntitiesAtEdges(contentState, selectionState) {
   var blockMap = contentState.getBlockMap();
   var entityMap = contentState.getEntityMap();
-
   var updatedBlocks = {};
-
   var startKey = selectionState.getStartKey();
   var startOffset = selectionState.getStartOffset();
   var startBlock = blockMap.get(startKey);
@@ -2050,6 +2015,7 @@ function removeEntitiesAtEdges(contentState, selectionState) {
   var endKey = selectionState.getEndKey();
   var endOffset = selectionState.getEndOffset();
   var endBlock = blockMap.get(endKey);
+
   if (startKey === endKey) {
     endBlock = updatedStart;
   }
@@ -2069,16 +2035,37 @@ function removeEntitiesAtEdges(contentState, selectionState) {
     selectionAfter: selectionState
   });
 }
+/**
+ * Given a list of characters and an offset that is in the middle of an entity,
+ * returns the start and end of the entity that is overlapping the offset.
+ * Note: This method requires that the offset be in an entity range.
+ */
 
-function getRemovalRange(characters, key, offset) {
-  var removalRange;
-  findRangesImmutable(characters, function (a, b) {
+
+function getRemovalRange(characters, entityKey, offset) {
+  var removalRange; // Iterates through a list looking for ranges of matching items
+  // based on the 'isEqual' callback.
+  // Then instead of returning the result, call the 'found' callback
+  // with each range.
+  // Then filters those ranges based on the 'filter' callback
+  //
+  // Here we use it to find ranges of characters with the same entity key.
+
+  findRangesImmutable(characters, // the list to iterate through
+  function (a, b) {
     return a.getEntity() === b.getEntity();
-  }, function (element) {
-    return element.getEntity() === key;
-  }, function (start, end) {
+  }, // 'isEqual' callback
+  function (element) {
+    return element.getEntity() === entityKey;
+  }, // 'filter' callback
+  function (start, end) {
+    // 'found' callback
     if (start <= offset && end >= offset) {
-      removalRange = { start: start, end: end };
+      // this entity overlaps the offset index
+      removalRange = {
+        start: start,
+        end: end
+      };
     }
   });
   !(typeof removalRange === 'object') ?  false ? undefined : invariant(false) : void 0;
@@ -2094,17 +2081,20 @@ function removeForBlock(entityMap, block, offset) {
 
   if (entityAfterCursor && entityAfterCursor === entityBeforeCursor) {
     var entity = entityMap.__get(entityAfterCursor);
+
     if (entity.getMutability() !== 'MUTABLE') {
       var _getRemovalRange = getRemovalRange(chars, entityAfterCursor, offset),
           start = _getRemovalRange.start,
           end = _getRemovalRange.end;
 
       var current;
+
       while (start < end) {
         current = chars.get(start);
         chars = chars.set(start, CharacterMetadata.applyEntity(current, null));
         start++;
       }
+
       return block.set('characterList', chars);
     }
   }
@@ -2125,42 +2115,43 @@ module.exports = removeEntitiesAtEdges;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
+ * 
  */
 
 
-
+var validateFormat =  false ? undefined : function (format) {};
 /**
  * Use invariant() to assert state which your program assumes to be true.
  *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
+ * Provide sprintf-style format (only %s is supported) and arguments to provide
+ * information about what broke and what you were expecting.
  *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
+ * The invariant message will be stripped in production, but the invariant will
+ * remain to ensure logic does not differ in production.
  */
 
-var validateFormat = function validateFormat(format) {};
+function invariant(condition, format) {
+  for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+    args[_key - 2] = arguments[_key];
+  }
 
-if (false) {}
-
-function invariant(condition, format, a, b, c, d, e, f) {
   validateFormat(format);
 
   if (!condition) {
     var error;
+
     if (format === undefined) {
       error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
     } else {
-      var args = [a, b, c, d, e, f];
       var argIndex = 0;
       error = new Error(format.replace(/%s/g, function () {
-        return args[argIndex++];
+        return String(args[argIndex++]);
       }));
       error.name = 'Invariant Violation';
     }
 
-    error.framesToPop = 1; // we don't care about invariant's own frame
+    error.framesToPop = 1; // Skip invariant's own stack frame.
+
     throw error;
   }
 }
@@ -2633,7 +2624,7 @@ var helpers_extends = __webpack_require__(12);
 var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/slicedToArray.js
-var slicedToArray = __webpack_require__(25);
+var slicedToArray = __webpack_require__(26);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 
 // EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/createClass.js
@@ -2663,8 +2654,8 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 // EXTERNAL MODULE: ../node_modules/uuid/dist/index.js
 var dist = __webpack_require__(5);
 
-// EXTERNAL MODULE: external "braft-utils"
-var external_braft_utils_ = __webpack_require__(4);
+// EXTERNAL MODULE: external "braft-utils-v2"
+var external_braft_utils_v2_ = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./configs/controls.js
 
@@ -3149,7 +3140,7 @@ var Image_Image = /*#__PURE__*/function (_React$Component) {
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "removeImage", function () {
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].removeBlock(_this.props.editor.getValue(), _this.props.block));
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].removeBlock(_this.props.editor.getValue(), _this.props.block));
 
       _this.unlockEditor();
     });
@@ -3198,7 +3189,7 @@ var Image_Image = /*#__PURE__*/function (_React$Component) {
       }
 
       if (link !== null) {
-        _this.props.editor.setValue(external_braft_utils_["ContentUtils"].setMediaData(_this.props.editor.getValue(), _this.props.entityKey, {
+        _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].setMediaData(_this.props.editor.getValue(), _this.props.entityKey, {
           link: link
         }));
 
@@ -3264,7 +3255,7 @@ var Image_Image = /*#__PURE__*/function (_React$Component) {
         newImageSize = hookReturns;
       }
 
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].setMediaData(_this.props.editor.getValue(), _this.props.entityKey, newImageSize));
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].setMediaData(_this.props.editor.getValue(), _this.props.entityKey, newImageSize));
 
       window.setImmediate(_this.props.editor.forceRender);
       return true;
@@ -3314,7 +3305,7 @@ var Image_Image = /*#__PURE__*/function (_React$Component) {
         newImageSize = hookReturns;
       }
 
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].setMediaData(_this.props.editor.getValue(), _this.props.entityKey, newImageSize));
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].setMediaData(_this.props.editor.getValue(), _this.props.entityKey, newImageSize));
 
       window.setImmediate(_this.props.editor.forceRender);
       return true;
@@ -3333,7 +3324,7 @@ var Image_Image = /*#__PURE__*/function (_React$Component) {
         newFloat = hookReturns;
       }
 
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].setMediaPosition(_this.props.editor.getValue(), _this.props.block, {
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].setMediaPosition(_this.props.editor.getValue(), _this.props.block, {
         newFloat: newFloat
       }));
 
@@ -3355,7 +3346,7 @@ var Image_Image = /*#__PURE__*/function (_React$Component) {
         newAlignment = hookReturns;
       }
 
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].setMediaPosition(_this.props.editor.getValue(), _this.props.block, {
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].setMediaPosition(_this.props.editor.getValue(), _this.props.block, {
         newAlignment: newAlignment
       }));
 
@@ -3451,7 +3442,7 @@ var Image_Image = /*#__PURE__*/function (_React$Component) {
       }
 
       newLinkTarget = newLinkTarget === '_blank' ? '' : '_blank';
-      this.props.editor.setValue(external_braft_utils_["ContentUtils"].setMediaData(this.props.editor.getValue(), this.props.entityKey, {
+      this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].setMediaData(this.props.editor.getValue(), this.props.entityKey, {
         newLinkTarget: newLinkTarget
       }));
       window.setImmediate(this.props.editor.forceRender);
@@ -3794,7 +3785,7 @@ var Modal_Modal = /*#__PURE__*/function (_React$Component) {
 
     _this.active = false; // eslint-disable-next-line new-cap
 
-    _this.componentId = "BRAFT-MODAL-".concat(external_braft_utils_["BaseUtils"].UniueIndex());
+    _this.componentId = "BRAFT-MODAL-".concat(external_braft_utils_v2_["BaseUtils"].UniueIndex());
     return _this;
   }
 
@@ -4043,7 +4034,7 @@ var Video_Video = function Video(_ref) {
       poster = _meta$poster === void 0 ? '' : _meta$poster;
 
   var removeVideo = function removeVideo() {
-    editor.setValue(external_braft_utils_["ContentUtils"].removeBlock(editorState, block));
+    editor.setValue(external_braft_utils_v2_["ContentUtils"].removeBlock(editorState, block));
   };
 
   return external_react_default.a.createElement("div", {
@@ -4096,7 +4087,7 @@ var Audio_Audio = function Audio(_ref) {
       meta = mediaData.meta;
 
   var removeAudio = function removeAudio() {
-    editor.setValue(external_braft_utils_["ContentUtils"].removeBlock(editorState, block));
+    editor.setValue(external_braft_utils_v2_["ContentUtils"].removeBlock(editorState, block));
   };
 
   return external_react_default.a.createElement("div", {
@@ -4147,7 +4138,7 @@ var Embed_Embed = function Embed(_ref) {
       meta = mediaData.meta;
 
   var removeEmbed = function removeEmbed() {
-    editor.setValue(external_braft_utils_["ContentUtils"].removeBlock(editorState, block));
+    editor.setValue(external_braft_utils_v2_["ContentUtils"].removeBlock(editorState, block));
   };
 
   return external_react_default.a.createElement("div", {
@@ -4191,7 +4182,7 @@ var HorizontalLine_HorizontalLine = function HorizontalLine(_ref) {
       editor = _ref.editor;
 
   var removeHorizontalLine = function removeHorizontalLine() {
-    editor.setValue(external_braft_utils_["ContentUtils"].removeBlock(editorState, block));
+    editor.setValue(external_braft_utils_v2_["ContentUtils"].removeBlock(editorState, block));
   };
 
   return external_react_default.a.createElement("div", {
@@ -4430,10 +4421,16 @@ var toConsumableArray = __webpack_require__(13);
 var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
 
 // EXTERNAL MODULE: ../node_modules/draft-js-multidecorators/index.js
-var draft_js_multidecorators = __webpack_require__(19);
+var draft_js_multidecorators = __webpack_require__(20);
 var draft_js_multidecorators_default = /*#__PURE__*/__webpack_require__.n(draft_js_multidecorators);
 
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/objectWithoutProperties.js
+var objectWithoutProperties = __webpack_require__(18);
+var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
+
 // CONCATENATED MODULE: ./renderers/decorators/Link/index.jsx
+
+
 
 
 
@@ -4454,18 +4451,17 @@ var Link_Link = function Link(props) {
 
   var _contentState$getEnti = contentState.getEntity(entityKey).getData(),
       href = _contentState$getEnti.href,
-      target = _contentState$getEnti.target;
+      attrs = objectWithoutProperties_default()(_contentState$getEnti, ["href"]);
 
   return external_react_default.a.createElement("span", {
     className: "bf-link-wrap"
-  }, external_react_default.a.createElement("a", {
+  }, external_react_default.a.createElement("a", extends_default()({
     onClick: function onClick(event) {
       return viewLink(event, href);
     },
     className: "bf-link",
-    href: href,
-    target: target
-  }, children));
+    href: href
+  }, attrs), children));
 };
 
 Link_Link.propTypes = {
@@ -4551,12 +4547,8 @@ var getBlockStyleFn = block_blockStyleFn;
 var getCustomStyleMap = inlineStyleMap;
 var getCustomStyleFn = inlineStyleFn;
 var getDecorators = decorators;
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/objectWithoutProperties.js
-var objectWithoutProperties = __webpack_require__(26);
-var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
-
 // EXTERNAL MODULE: external "braft-finder"
-var external_braft_finder_ = __webpack_require__(20);
+var external_braft_finder_ = __webpack_require__(21);
 var external_braft_finder_default = /*#__PURE__*/__webpack_require__.n(external_braft_finder_);
 
 // CONCATENATED MODULE: ./languages/en.js
@@ -4617,6 +4609,7 @@ var external_braft_finder_default = /*#__PURE__*/__webpack_require__.n(external_
   linkEditor: {
     textInputPlaceHolder: 'Input link text',
     linkInputPlaceHolder: 'Input link URL',
+    relInputPlaceHolder: 'Input link rel',
     inputWithEnterPlaceHolder: 'Input link URL and press Enter',
     openInNewWindow: 'Open in new window',
     removeLink: 'Remove Link'
@@ -4694,6 +4687,7 @@ var external_braft_finder_default = /*#__PURE__*/__webpack_require__.n(external_
   linkEditor: {
     textInputPlaceHolder: '输入链接文字',
     linkInputPlaceHolder: '输入链接地址',
+    relInputPlaceHolder: '输入rel属性',
     inputWithEnterPlaceHolder: '输入链接地址并回车',
     openInNewWindow: '在新窗口打开',
     removeLink: '移除链接'
@@ -4771,6 +4765,7 @@ var external_braft_finder_default = /*#__PURE__*/__webpack_require__.n(external_
   linkEditor: {
     textInputPlaceHolder: '輸入鏈接文字',
     linkInputPlaceHolder: '輸入鏈接地址',
+    relInputPlaceHolder: '輸入rel屬性',
     inputWithEnterPlaceHolder: '輸入鏈接地址並回車',
     openInNewWindow: '在新窗口打開',
     removeLink: '移除鏈接'
@@ -5031,7 +5026,7 @@ var external_braft_finder_default = /*#__PURE__*/__webpack_require__.n(external_
     undo: 'キャンセル',
     redo: 'キャンセル',
     fontSize: 'フォントサイズ',
-    lineHeight: 'フォントサイズ',
+    lineHeight: '行の高さ',
     letterSpacing: 'ワード間隔',
     textIndent: '段落のインデント',
     increaseIndent: 'インデントを増やす',
@@ -5265,7 +5260,7 @@ var external_braft_finder_default = /*#__PURE__*/__webpack_require__.n(external_
     tempColors: 'Temp Colors',
     backgroundColor: 'Cor de Fundo',
     bold: 'Negrito',
-    lineHeight: 'Altura da LinhaLine Height',
+    lineHeight: 'Altura da Linha',
     letterSpacing: 'Espaçamento entre Letras',
     textIndent: 'Identação de Texto',
     increaseIndent: 'Aumentar Identação',
@@ -5293,7 +5288,7 @@ var external_braft_finder_default = /*#__PURE__*/__webpack_require__.n(external_
     code: 'Código',
     link: 'Link',
     unlink: 'Remover Link',
-    hr: 'Linha Horizontal',
+    hr: 'Separador Horizontal',
     media: 'Mídia',
     mediaLibirary: 'Biblioteca de Mídia',
     emoji: 'Emoji',
@@ -5308,17 +5303,17 @@ var external_braft_finder_default = /*#__PURE__*/__webpack_require__.n(external_
     removeLink: 'Remover Link'
   },
   audioPlayer: {
-    title: 'Tocar Áudio'
+    title: 'Reproduzir Áudio'
   },
   videoPlayer: {
-    title: 'Tocar Vídeo',
-    embedTitle: 'Mídia Embutida'
+    title: 'Reproduzir Vídeo',
+    embedTitle: 'Mídia Incorporada'
   },
   media: {
     image: 'Imagem',
     video: 'Vídeo',
     audio: 'Áudio',
-    embed: 'Embutido'
+    embed: 'Mídia Incorporada'
   }
 });
 // CONCATENATED MODULE: ./languages/vi-vn.js
@@ -5583,18 +5578,18 @@ var handlers_keyCommandHandlers = function keyCommandHandlers(command, editorSta
       return 'handled';
     }
 
-    var blockType = external_braft_utils_["ContentUtils"].getSelectionBlockType(editorState);
+    var blockType = external_braft_utils_v2_["ContentUtils"].getSelectionBlockType(editorState);
 
     if (allowIndent && cursorIsAtFirst && blockType !== 'code-block') {
-      editor.setValue(external_braft_utils_["ContentUtils"].decreaseSelectionIndent(editorState));
+      editor.setValue(external_braft_utils_v2_["ContentUtils"].decreaseSelectionIndent(editorState));
     }
   }
 
   if (command === 'tab') {
-    var _blockType = external_braft_utils_["ContentUtils"].getSelectionBlockType(editorState);
+    var _blockType = external_braft_utils_v2_["ContentUtils"].getSelectionBlockType(editorState);
 
     if (_blockType === 'code-block') {
-      editor.setValue(external_braft_utils_["ContentUtils"].insertText(editorState, ' '.repeat(editor.editorProps.codeTabIndents)));
+      editor.setValue(external_braft_utils_v2_["ContentUtils"].insertText(editorState, ' '.repeat(editor.editorProps.codeTabIndents)));
       return 'handled';
     }
 
@@ -5609,12 +5604,12 @@ var handlers_keyCommandHandlers = function keyCommandHandlers(command, editorSta
     }
 
     if (_blockType !== 'atomic' && allowIndent && cursorIsAtFirst) {
-      editor.setValue(external_braft_utils_["ContentUtils"].increaseSelectionIndent(editorState));
+      editor.setValue(external_braft_utils_v2_["ContentUtils"].increaseSelectionIndent(editorState));
       return 'handled';
     }
   }
 
-  var nextEditorState = external_braft_utils_["ContentUtils"].handleKeyCommand(editorState, command);
+  var nextEditorState = external_braft_utils_v2_["ContentUtils"].handleKeyCommand(editorState, command);
 
   if (nextEditorState) {
     editor.setValue(nextEditorState);
@@ -5628,12 +5623,12 @@ var handlers_returnHandlers = function returnHandlers(event, editorState, editor
     return 'handled';
   }
 
-  var currentBlock = external_braft_utils_["ContentUtils"].getSelectionBlock(editorState);
+  var currentBlock = external_braft_utils_v2_["ContentUtils"].getSelectionBlock(editorState);
   var currentBlockType = currentBlock.getType();
 
   if (currentBlockType === 'unordered-list-item' || currentBlockType === 'ordered-list-item') {
     if (currentBlock.getLength() === 0) {
-      editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionBlockType(editorState, 'unstyled'));
+      editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionBlockType(editorState, 'unstyled'));
       return 'handled';
     }
 
@@ -5642,7 +5637,7 @@ var handlers_returnHandlers = function returnHandlers(event, editorState, editor
 
   if (currentBlockType === 'code-block') {
     if (event.which === 13 && (event.getModifierState('Shift') || event.getModifierState('Alt') || event.getModifierState('Control'))) {
-      editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionBlockType(editorState, 'unstyled'));
+      editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionBlockType(editorState, 'unstyled'));
       return 'handled';
     }
 
@@ -5679,7 +5674,7 @@ var beforeInputHandlers = function beforeInputHandlers(chars, editorState, edito
 };
 var handlers_compositionStartHandler = function compositionStartHandler(_, editor) {
   var editorState = editor.state.editorState;
-  var selectedBlocks = external_braft_utils_["ContentUtils"].getSelectedBlocks(editorState);
+  var selectedBlocks = external_braft_utils_v2_["ContentUtils"].getSelectedBlocks(editorState);
 
   if (selectedBlocks && selectedBlocks.length > 1) {
     var nextEditorState = external_draft_js_["EditorState"].push(editorState, external_draft_js_["Modifier"].removeRange(editorState.getCurrentContent(), editorState.getSelection(), 'backward'), 'remove-range');
@@ -5693,8 +5688,8 @@ var handlers_dropHandlers = function dropHandlers(selectionState, dataTransfer, 
 
   if (window && window.__BRAFT_DRAGING__IMAGE__) {
     var nextEditorState = external_draft_js_["EditorState"].forceSelection(editor.state.editorState, selectionState);
-    nextEditorState = external_braft_utils_["ContentUtils"].insertMedias(nextEditorState, [window.__BRAFT_DRAGING__IMAGE__.mediaData]);
-    nextEditorState = external_braft_utils_["ContentUtils"].removeBlock(nextEditorState, window.__BRAFT_DRAGING__IMAGE__.block, nextEditorState.getSelection());
+    nextEditorState = external_braft_utils_v2_["ContentUtils"].insertMedias(nextEditorState, [window.__BRAFT_DRAGING__IMAGE__.mediaData]);
+    nextEditorState = external_braft_utils_v2_["ContentUtils"].removeBlock(nextEditorState, window.__BRAFT_DRAGING__IMAGE__.block, nextEditorState.getSelection());
     window.__BRAFT_DRAGING__IMAGE__ = null;
     editor.lockOrUnlockEditor(true);
     editor.setValue(nextEditorState);
@@ -5722,14 +5717,14 @@ var handlers_handleFiles = function handleFiles(files, editor) {
           validateResult.then(function () {
             editor.braftFinder.uploadImage(file, function (image) {
               if (editor.isLiving) {
-                editor.setValue(external_braft_utils_["ContentUtils"].insertMedias(editor.state.editorState, [image]));
+                editor.setValue(external_braft_utils_v2_["ContentUtils"].insertMedias(editor.state.editorState, [image]));
               }
             });
           });
         } else if (validateResult) {
           editor.braftFinder.uploadImage(file, function (image) {
             if (editor.isLiving) {
-              editor.setValue(external_braft_utils_["ContentUtils"].insertMedias(editor.state.editorState, [image]));
+              editor.setValue(external_braft_utils_v2_["ContentUtils"].insertMedias(editor.state.editorState, [image]));
             }
           });
         }
@@ -5783,7 +5778,7 @@ var handlers_pastedTextHandlers = function pastedTextHandlers(text, html, editor
     return false;
   }
 
-  var tempColors = external_braft_utils_["ColorUtils"].detectColorsFromHTMLString(html);
+  var tempColors = external_braft_utils_v2_["ColorUtils"].detectColorsFromHTMLString(html);
   editor.setState({
     tempColors: [].concat(toConsumableArray_default()(editor.state.tempColors), toConsumableArray_default()(tempColors)).filter(function (item) {
       return editor.editorProps.colors.indexOf(item) === -1;
@@ -5791,7 +5786,7 @@ var handlers_pastedTextHandlers = function pastedTextHandlers(text, html, editor
       return array.indexOf(item) === index;
     })
   }, function () {
-    editor.setValue(external_braft_utils_["ContentUtils"].insertHTML(editorState, html, 'paste'));
+    editor.setValue(external_braft_utils_v2_["ContentUtils"].insertHTML(editorState, html, 'paste'));
   });
   return 'handled';
 };
@@ -5805,7 +5800,7 @@ var responsiveHelperInited = false;
 var debouce = false;
 /* harmony default export */ var responsive = ({
   resolve: function resolve(eventHandler) {
-    var id = external_braft_utils_["BaseUtils"].UniqueIndex();
+    var id = external_braft_utils_v2_["BaseUtils"].UniqueIndex();
     resizeEventHandlers.push({
       id: id,
       eventHandler: eventHandler
@@ -6074,6 +6069,10 @@ var LinkEditor_style = __webpack_require__(62);
 
 
 
+function LinkEditor_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function LinkEditor_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { LinkEditor_ownKeys(Object(source), true).forEach(function (key) { defineProperty_default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { LinkEditor_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 /* eslint-disable camelcase */
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -6120,6 +6119,12 @@ var LinkEditor_LinkEditor = /*#__PURE__*/function (_React$Component) {
       });
     });
 
+    defineProperty_default()(assertThisInitialized_default()(_this), "handleInputRel", function (e) {
+      _this.setState({
+        rel: e.currentTarget.value
+      });
+    });
+
     defineProperty_default()(assertThisInitialized_default()(_this), "setTarget", function () {
       _this.setState(function (prevState) {
         return {
@@ -6135,23 +6140,26 @@ var LinkEditor_LinkEditor = /*#__PURE__*/function (_React$Component) {
     defineProperty_default()(assertThisInitialized_default()(_this), "handleUnlink", function () {
       _this.dropDownInstance.hide();
 
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionLink(_this.props.editorState, false));
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionLink(_this.props.editorState, false));
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "handleConfirm", function () {
       var _this$state = _this.state,
           href = _this$state.href,
           target = _this$state.target;
+      var rel = _this.state.rel;
       var _this$state2 = _this.state,
           text = _this$state2.text,
           textSelected = _this$state2.textSelected;
 
       var hookReturns = _this.props.hooks('toggle-link', {
         href: href,
-        target: target
+        target: target,
+        rel: rel
       })({
         href: href,
-        target: target
+        target: target,
+        rel: rel
       });
 
       _this.dropDownInstance.hide();
@@ -6174,16 +6182,21 @@ var LinkEditor_LinkEditor = /*#__PURE__*/function (_React$Component) {
 
       if (textSelected) {
         if (href) {
-          _this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionLink(_this.props.editorState, href, target));
+          _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionLink(_this.props.editorState, href, LinkEditor_objectSpread({
+            target: target
+          }, rel ? {
+            rel: rel
+          } : {})));
         } else {
-          _this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionLink(_this.props.editorState, false));
+          _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionLink(_this.props.editorState, false));
         }
       } else {
-        _this.props.editor.setValue(external_braft_utils_["ContentUtils"].insertText(_this.props.editorState, text || href, null, {
+        _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].insertText(_this.props.editorState, text || href, null, {
           type: 'LINK',
           data: {
             href: href,
-            target: target
+            target: target,
+            rel: rel
           }
         }));
       }
@@ -6194,6 +6207,7 @@ var LinkEditor_LinkEditor = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       text: '',
       href: '',
+      rel: '',
       target: props.defaultLinkTarget || '',
       textSelected: false
     };
@@ -6203,15 +6217,15 @@ var LinkEditor_LinkEditor = /*#__PURE__*/function (_React$Component) {
   createClass_default()(LinkEditor, [{
     key: "UNSAFE_componentWillReceiveProps",
     value: function UNSAFE_componentWillReceiveProps(nextProps) {
-      var _ContentUtils$getSele = external_braft_utils_["ContentUtils"].getSelectionEntityData(nextProps.editorState, 'LINK'),
+      var _ContentUtils$getSele = external_braft_utils_v2_["ContentUtils"].getSelectionEntityData(nextProps.editorState, 'LINK'),
           href = _ContentUtils$getSele.href,
           target = _ContentUtils$getSele.target;
 
-      var textSelected = !external_braft_utils_["ContentUtils"].isSelectionCollapsed(this.props.editorState) && external_braft_utils_["ContentUtils"].getSelectionBlockType(this.props.editorState) !== 'atomic';
+      var textSelected = !external_braft_utils_v2_["ContentUtils"].isSelectionCollapsed(this.props.editorState) && external_braft_utils_v2_["ContentUtils"].getSelectionBlockType(this.props.editorState) !== 'atomic';
       var selectedText = '';
 
       if (textSelected) {
-        selectedText = external_braft_utils_["ContentUtils"].getSelectionText(this.props.editorState);
+        selectedText = external_braft_utils_v2_["ContentUtils"].getSelectionText(this.props.editorState);
       }
 
       this.setState({
@@ -6229,7 +6243,8 @@ var LinkEditor_LinkEditor = /*#__PURE__*/function (_React$Component) {
           text = _this$state3.text,
           href = _this$state3.href,
           target = _this$state3.target,
-          textSelected = _this$state3.textSelected;
+          textSelected = _this$state3.textSelected,
+          rel = _this$state3.rel;
       var caption = external_react_default.a.createElement("i", {
         className: "bfi-link"
       });
@@ -6263,6 +6278,15 @@ var LinkEditor_LinkEditor = /*#__PURE__*/function (_React$Component) {
         placeholder: this.props.language.linkEditor.linkInputPlaceHolder,
         onKeyDown: this.handeKeyDown,
         onChange: this.handleInputLink
+      })), external_react_default.a.createElement("div", {
+        className: "input-group"
+      }, external_react_default.a.createElement("input", {
+        type: "text",
+        value: rel,
+        spellCheck: false,
+        placeholder: this.props.language.linkEditor.relInputPlaceHolder,
+        onKeyDown: this.handeKeyDown,
+        onChange: this.handleInputRel
       })), external_react_default.a.createElement("div", {
         className: "switch-group"
       }, external_react_default.a.createElement(common_Switch, {
@@ -6529,9 +6553,9 @@ var TextColor_TextColor = /*#__PURE__*/function (_React$Component) {
         }
 
         if (_this.state.colorType === 'color') {
-          _this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionColor(_this.props.editorState, newColor));
+          _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionColor(_this.props.editorState, newColor));
         } else {
-          _this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionBackgroundColor(_this.props.editorState, newColor));
+          _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionBackgroundColor(_this.props.editorState, newColor));
         }
       }
 
@@ -6655,7 +6679,7 @@ var FontSize_toggleFontSize = function toggleFontSize(event, props) {
     fontSize = hookReturns;
   }
 
-  props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionFontSize(props.editorState, fontSize));
+  props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionFontSize(props.editorState, fontSize));
   props.editor.requestFocus();
   return true;
 };
@@ -6665,7 +6689,7 @@ var FontSize_FontSize = function FontSize(props) {
   var currentFontSize = null;
   var dropDownInstance = null;
   props.fontSizes.find(function (item) {
-    if (external_braft_utils_["ContentUtils"].selectionHasInlineStyle(props.editorState, "FONTSIZE-".concat(item))) {
+    if (external_braft_utils_v2_["ContentUtils"].selectionHasInlineStyle(props.editorState, "FONTSIZE-".concat(item))) {
       caption = item;
       currentFontSize = item;
       return true;
@@ -6730,7 +6754,7 @@ var LineHeight_toggleLineHeight = function toggleLineHeight(event, props) {
     lineHeight = hookReturns;
   }
 
-  props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionLineHeight(props.editorState, lineHeight));
+  props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionLineHeight(props.editorState, lineHeight));
   props.editor.requestFocus();
   return true;
 };
@@ -6740,7 +6764,7 @@ var LineHeight_LineHeight = function LineHeight(props) {
   var currentLineHeight = null;
   var dropDownInstance = external_react_default.a.createRef();
   props.lineHeights.find(function (item) {
-    if (external_braft_utils_["ContentUtils"].selectionHasInlineStyle(props.editorState, "LINEHEIGHT-".concat(item))) {
+    if (external_braft_utils_v2_["ContentUtils"].selectionHasInlineStyle(props.editorState, "LINEHEIGHT-".concat(item))) {
       caption = item;
       currentLineHeight = item;
       return true;
@@ -6805,7 +6829,7 @@ var FontFamily_toggleFontFamily = function toggleFontFamily(event, props) {
     fontFamilyName = hookReturns;
   }
 
-  props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionFontFamily(props.editorState, fontFamilyName));
+  props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionFontFamily(props.editorState, fontFamilyName));
   props.editor.requestFocus();
   return true;
 };
@@ -6815,7 +6839,7 @@ var FontFamily_FontFamily = function FontFamily(props) {
   var currentIndex = null;
   var dropDownInstance = null;
   props.fontFamilies.find(function (item, index) {
-    if (external_braft_utils_["ContentUtils"].selectionHasInlineStyle(props.editorState, "FONTFAMILY-".concat(item.name))) {
+    if (external_braft_utils_v2_["ContentUtils"].selectionHasInlineStyle(props.editorState, "FONTFAMILY-".concat(item.name))) {
       caption = item.name;
       currentIndex = index;
       return true;
@@ -6908,7 +6932,7 @@ var TextAlign_TextAlign = /*#__PURE__*/function (_React$Component) {
         alignment = hookReturns;
       }
 
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionAlignment(_this.props.editorState, alignment));
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionAlignment(_this.props.editorState, alignment));
 
       _this.props.editor.requestFocus();
     });
@@ -6920,7 +6944,7 @@ var TextAlign_TextAlign = /*#__PURE__*/function (_React$Component) {
     key: "UNSAFE_componentWillReceiveProps",
     value: function UNSAFE_componentWillReceiveProps(next) {
       this.setState({
-        currentAlignment: external_braft_utils_["ContentUtils"].getSelectionBlockData(next.editorState, 'textAlign')
+        currentAlignment: external_braft_utils_v2_["ContentUtils"].getSelectionBlockData(next.editorState, 'textAlign')
       });
     }
   }, {
@@ -6978,7 +7002,7 @@ var EmojiPicker_insertEmoji = function insertEmoji(event, props) {
     emoji = hookReturns;
   }
 
-  props.editor.setValue(external_braft_utils_["ContentUtils"].insertText(props.editorState, emoji));
+  props.editor.setValue(external_braft_utils_v2_["ContentUtils"].insertText(props.editorState, emoji));
   props.editor.requestFocus();
   return true;
 };
@@ -7037,7 +7061,7 @@ var LetterSpacing_toggleLetterSpacing = function toggleLetterSpacing(event, prop
     letterSpacing = hookReturns;
   }
 
-  props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionLetterSpacing(props.editorState, letterSpacing));
+  props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionLetterSpacing(props.editorState, letterSpacing));
   props.editor.requestFocus();
   return true;
 };
@@ -7047,7 +7071,7 @@ var LetterSpacing_LetterSpacing = function LetterSpacing(props) {
   var currentLetterSpacing = null;
   var dropDownInstance = null;
   props.letterSpacings.find(function (item) {
-    if (external_braft_utils_["ContentUtils"].selectionHasInlineStyle(props.editorState, "LETTERSPACING-".concat(item))) {
+    if (external_braft_utils_v2_["ContentUtils"].selectionHasInlineStyle(props.editorState, "LETTERSPACING-".concat(item))) {
       caption = item;
       currentLetterSpacing = item;
       return true;
@@ -7126,13 +7150,13 @@ var TextIndent_TextIndent = /*#__PURE__*/function (_React$Component) {
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "increaseIndent", function () {
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].increaseSelectionIndent(_this.props.editorState));
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].increaseSelectionIndent(_this.props.editorState));
 
       _this.props.editor.requestFocus();
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "decreaseIndent", function () {
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].decreaseSelectionIndent(_this.props.editorState));
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].decreaseSelectionIndent(_this.props.editorState));
 
       _this.props.editor.requestFocus();
     });
@@ -7145,7 +7169,7 @@ var TextIndent_TextIndent = /*#__PURE__*/function (_React$Component) {
     // eslint-disable-next-line camelcase
     value: function UNSAFE_componentWillReceiveProps(nextProps) {
       this.setState({
-        currentIndent: external_braft_utils_["ContentUtils"].getSelectionBlockData(nextProps.editorState, 'textIndent') || 0
+        currentIndent: external_braft_utils_v2_["ContentUtils"].getSelectionBlockData(nextProps.editorState, 'textIndent') || 0
       });
     }
   }, {
@@ -7298,6 +7322,7 @@ var ControlBar_ControlBar = /*#__PURE__*/function (_React$Component) {
         language: _this.props.language,
         width: 640,
         showFooter: false,
+        onClose: mediaProps.onClose,
         component: external_react_default.a.createElement(MediaLibrary, {
           accepts: mediaProps.accepts,
           onCancel: _this.closeBraftFinder,
@@ -7321,7 +7346,7 @@ var ControlBar_ControlBar = /*#__PURE__*/function (_React$Component) {
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "insertMedias", function (medias) {
-      _this.props.editor.setValue(external_braft_utils_["ContentUtils"].insertMedias(_this.props.editorState, medias));
+      _this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].insertMedias(_this.props.editorState, medias));
 
       _this.props.editor.requestFocus();
 
@@ -7368,11 +7393,11 @@ var ControlBar_ControlBar = /*#__PURE__*/function (_React$Component) {
       var type = data.type,
           command = data.command;
 
-      if (type === 'inline-style' && external_braft_utils_["ContentUtils"].selectionHasInlineStyle(this.props.editorState, command)) {
+      if (type === 'inline-style' && external_braft_utils_v2_["ContentUtils"].selectionHasInlineStyle(this.props.editorState, command)) {
         className += ' active';
-      } else if (type === 'block-type' && external_braft_utils_["ContentUtils"].getSelectionBlockType(this.props.editorState) === command) {
+      } else if (type === 'block-type' && external_braft_utils_v2_["ContentUtils"].getSelectionBlockType(this.props.editorState) === command) {
         className += ' active';
-      } else if (type === 'entity' && external_braft_utils_["ContentUtils"].getSelectionEntityType(this.props.editorState) === command) {
+      } else if (type === 'entity' && external_braft_utils_v2_["ContentUtils"].getSelectionEntityType(this.props.editorState) === command) {
         className += ' active';
       }
 
@@ -7397,19 +7422,19 @@ var ControlBar_ControlBar = /*#__PURE__*/function (_React$Component) {
       if (type === 'inline-style') {
         var exclusiveInlineStyle = exclusiveInlineStyles[hookCommand];
 
-        if (exclusiveInlineStyle && external_braft_utils_["ContentUtils"].selectionHasInlineStyle(editorState, exclusiveInlineStyle)) {
-          editorState = external_braft_utils_["ContentUtils"].toggleSelectionInlineStyle(editorState, exclusiveInlineStyle);
+        if (exclusiveInlineStyle && external_braft_utils_v2_["ContentUtils"].selectionHasInlineStyle(editorState, exclusiveInlineStyle)) {
+          editorState = external_braft_utils_v2_["ContentUtils"].toggleSelectionInlineStyle(editorState, exclusiveInlineStyle);
         }
 
-        this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionInlineStyle(editorState, hookCommand));
+        this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionInlineStyle(editorState, hookCommand));
       }
 
       if (type === 'block-type') {
-        this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionBlockType(editorState, hookCommand));
+        this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionBlockType(editorState, hookCommand));
       }
 
       if (type === 'entity') {
-        this.props.editor.setValue(external_braft_utils_["ContentUtils"].toggleSelectionEntity(editorState, {
+        this.props.editor.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionEntity(editorState, {
           type: hookCommand,
           mutability: data.mutability || 'MUTABLE',
           data: data.data || {}
@@ -7463,7 +7488,7 @@ var ControlBar_ControlBar = /*#__PURE__*/function (_React$Component) {
           style = _this$props.style,
           textAligns = _this$props.textAligns,
           textBackgroundColor = _this$props.textBackgroundColor;
-      var currentBlockType = external_braft_utils_["ContentUtils"].getSelectionBlockType(editorState);
+      var currentBlockType = external_braft_utils_v2_["ContentUtils"].getSelectionBlockType(editorState);
       var commonProps = {
         editor: editor,
         editorId: editorId,
@@ -7960,24 +7985,24 @@ var editor_BraftEditor = /*#__PURE__*/function (_React$Component) {
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "undo", function () {
-      _this.setValue(external_braft_utils_["ContentUtils"].undo(_this.state.editorState));
+      _this.setValue(external_braft_utils_v2_["ContentUtils"].undo(_this.state.editorState));
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "redo", function () {
-      _this.setValue(external_braft_utils_["ContentUtils"].redo(_this.state.editorState));
+      _this.setValue(external_braft_utils_v2_["ContentUtils"].redo(_this.state.editorState));
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "removeSelectionInlineStyles", function () {
-      _this.setValue(external_braft_utils_["ContentUtils"].removeSelectionInlineStyles(_this.state.editorState));
+      _this.setValue(external_braft_utils_v2_["ContentUtils"].removeSelectionInlineStyles(_this.state.editorState));
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "insertHorizontalLine", function () {
-      _this.setValue(external_braft_utils_["ContentUtils"].insertHorizontalLine(_this.state.editorState));
+      _this.setValue(external_braft_utils_v2_["ContentUtils"].insertHorizontalLine(_this.state.editorState));
     });
 
     defineProperty_default()(assertThisInitialized_default()(_this), "clearEditorContent", function () {
-      _this.setValue(external_braft_utils_["ContentUtils"].clear(_this.state.editorState), function (editorState) {
-        _this.setValue(external_braft_utils_["ContentUtils"].toggleSelectionIndent(editorState, 0));
+      _this.setValue(external_braft_utils_v2_["ContentUtils"].clear(_this.state.editorState), function (editorState) {
+        _this.setValue(external_braft_utils_v2_["ContentUtils"].toggleSelectionIndent(editorState, 0));
       });
     });
 
@@ -8008,8 +8033,8 @@ var editor_BraftEditor = /*#__PURE__*/function (_React$Component) {
     defaultEditorState.setConvertOptions(editor_getConvertOptions(_this.editorProps));
     var tempColors = [];
 
-    if (external_braft_utils_["ContentUtils"].isEditorState(defaultEditorState)) {
-      var colors = external_braft_utils_["ColorUtils"].detectColorsFromDraftState(defaultEditorState.toRAW(true));
+    if (external_braft_utils_v2_["ContentUtils"].isEditorState(defaultEditorState)) {
+      var colors = external_braft_utils_v2_["ColorUtils"].detectColorsFromDraftState(defaultEditorState.toRAW(true));
       defaultEditorState.setConvertOptions(editor_getConvertOptions(_this.editorProps));
       tempColors = filterColors(colors, _this.editorProps.colors);
     }
@@ -8085,15 +8110,15 @@ var editor_BraftEditor = /*#__PURE__*/function (_React$Component) {
 
       var nextEditorState;
 
-      if (!this.valueInitialized && typeof this.props.defaultValue === 'undefined' && external_braft_utils_["ContentUtils"].isEditorState(props.defaultValue)) {
+      if (!this.valueInitialized && typeof this.props.defaultValue === 'undefined' && external_braft_utils_v2_["ContentUtils"].isEditorState(props.defaultValue)) {
         nextEditorState = props.defaultValue;
-      } else if (external_braft_utils_["ContentUtils"].isEditorState(editorState)) {
+      } else if (external_braft_utils_v2_["ContentUtils"].isEditorState(editorState)) {
         nextEditorState = editorState;
       }
 
       if (nextEditorState) {
         if (nextEditorState && nextEditorState !== this.state.editorState) {
-          var tempColors = external_braft_utils_["ColorUtils"].detectColorsFromDraftState(nextEditorState.toRAW(true));
+          var tempColors = external_braft_utils_v2_["ColorUtils"].detectColorsFromDraftState(nextEditorState.toRAW(true));
           nextEditorState.setConvertOptions(editor_getConvertOptions(this.editorProps));
           this.setState(function (prevState) {
             return {

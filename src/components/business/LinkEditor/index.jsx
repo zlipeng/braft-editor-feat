@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ContentUtils } from 'braft-utils';
+import { ContentUtils } from 'braft-utils-v2';
 
 import Switch from 'components/common/Switch';
 import DropDown from 'components/common/DropDown';
@@ -97,11 +97,12 @@ class LinkEditor extends React.Component {
 
   handleConfirm = () => {
     let { href, target } = this.state;
+    const { rel } = this.state;
     const { text, textSelected } = this.state;
     const hookReturns = this.props.hooks('toggle-link', { href, target, rel })({
       href,
       target,
-      rel
+      rel,
     });
 
     this.dropDownInstance.hide();
@@ -128,7 +129,7 @@ class LinkEditor extends React.Component {
             href,
             {
               target,
-              ...rel ? { rel } : {}
+              ...rel ? { rel } : {},
             }
           ),
         );
@@ -150,7 +151,7 @@ class LinkEditor extends React.Component {
 
   render() {
     const { allowInsertLinkText } = this.props;
-    const { text, href, target, textSelected } = this.state;
+    const { text, href, target, textSelected, rel } = this.state;
     const caption = <i className="bfi-link" />;
 
     return (
@@ -196,7 +197,7 @@ class LinkEditor extends React.Component {
             <div className="input-group">
               <input
                 type="text"
-                value={ref}
+                value={rel}
                 spellCheck={false}
                 placeholder={
                   this.props.language.linkEditor.relInputPlaceHolder

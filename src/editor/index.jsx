@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BraftFinder from 'braft-finder';
-import { ColorUtils, ContentUtils } from 'braft-utils';
+import { ColorUtils, ContentUtils } from 'braft-utils-v2';
 import { Editor, EditorState } from 'draft-js';
 import { Map } from 'immutable';
 import mergeClassNames from '@maximusft/mergeclassnames';

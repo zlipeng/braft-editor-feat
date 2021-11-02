@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ContentUtils } from 'braft-utils';
+import { ContentUtils } from 'braft-utils-v2';
 
 import DropDown from 'components/common/DropDown';
 import BuiltinColorPicker from 'components/common/ColorPicker';

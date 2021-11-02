@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { BaseUtils } from 'braft-utils';
+import { BaseUtils } from 'braft-utils-v2';
 import mergeClassNames from '@maximusft/mergeclassnames';
 
 import './style.scss';

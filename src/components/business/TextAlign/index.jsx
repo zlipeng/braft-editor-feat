@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import { ContentUtils } from 'braft-utils';
+import { ContentUtils } from 'braft-utils-v2';
 import mergeClassNames from '@maximusft/mergeclassnames';
 
 import ControlGroup from 'components/business/ControlGroup';
