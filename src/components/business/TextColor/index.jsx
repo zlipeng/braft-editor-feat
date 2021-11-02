@@ -51,7 +51,7 @@ class TextColor extends React.Component {
     }
 
     if (closePicker) {
-      this.dropDownInstance.hide();
+      this.dropDownInstance.current.hide();
       this.props.editor.requestFocus();
     }
     return true;

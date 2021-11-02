@@ -123,9 +123,8 @@ class BraftEditor extends React.Component {
     let tempColors = [];
 
     if (ContentUtils.isEditorState(defaultEditorState)) {
-      const colors = ColorUtils.detectColorsFromDraftState(
-        defaultEditorState.toRAW(true),
-      );
+      const raw = defaultEditorState.toRAW(true)
+      const colors = ColorUtils.detectColorsFromDraftState(raw);
       defaultEditorState.setConvertOptions(getConvertOptions(this.editorProps));
 
       tempColors = filterColors(colors, this.editorProps.colors);
@@ -246,6 +245,7 @@ class BraftEditor extends React.Component {
 
   componentWillUnmount() {
     this.isLiving = false;
+    console.log(this.controlBarInstance)
     if (this.controlBarInstance) {
       this.controlBarInstance.closeBraftFinder();
     }
@@ -271,7 +271,7 @@ class BraftEditor extends React.Component {
   }
 
   onChange = (editorState, callback) => {
-    let newEditorState = { ...editorState };
+    let newEditorState = editorState;
     if (!(editorState instanceof EditorState)) {
       newEditorState = EditorState.set(editorState, {
         decorator: this.editorDecorators,
@@ -542,11 +542,14 @@ class BraftEditor extends React.Component {
       commonProps,
       this.editorProps.blockRendererFn,
     );
+    console.log('blockRendererFn', blockRendererFn)
     const blockRenderMap = getBlockRenderMap(
       commonProps,
       this.editorProps.blockRenderMap,
     );
+    console.log('blockRenderMap', blockRenderMap)
     const blockStyleFn = getBlockStyleFn(this.editorProps.blockStyleFn);
+    console.log('blockStyleFn', blockStyleFn)
     const customStyleMap = getCustomStyleMap(
       commonProps,
       this.editorProps.customStyleMap,

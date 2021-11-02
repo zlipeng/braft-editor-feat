@@ -64,7 +64,7 @@ const LineHeight = (props) => {
               data-size={item}
               onClick={(event) => {
                 toggleLineHeight(event, props);
-                dropDownInstance.hide();
+                dropDownInstance.current.hide();
               }}
             >
               {item}

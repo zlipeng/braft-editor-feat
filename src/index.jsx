@@ -17,6 +17,8 @@ import {
 import { getDecorators } from 'renderers';
 import BraftEditor, { EditorState } from 'editor';
 
+import { convertToRaw } from 'draft-js'
+
 EditorState.prototype.setConvertOptions = function setConvertOptions(
   options = {},
 ) {
@@ -29,8 +31,9 @@ EditorState.prototype.toHTML = function toHTML(options = {}) {
 };
 
 EditorState.prototype.toRAW = function toRAW(noStringify) {
+  console.log(convertToRaw(this.getCurrentContent()))
   return noStringify
-    ? convertEditorStateToRaw(this)
+    ? convertToRaw(this.getCurrentContent())
     : JSON.stringify(convertEditorStateToRaw(this));
 };
 

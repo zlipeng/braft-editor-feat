@@ -40,7 +40,7 @@ const Headings = (props) => {
               className={`menu-item${isActive ? ' active' : ''}`}
               onClick={() => {
                 props.onChange(item.command, item.type);
-                dropDownInstance.hide();
+                dropDownInstance.current.hide();
               }}
             >
               {item.text}

@@ -672,7 +672,9 @@ var defaultRecord = {
 };
 var CharacterMetadataRecord = Record(defaultRecord);
 
-var CharacterMetadata = /*#__PURE__*/function (_CharacterMetadataRec) {
+var CharacterMetadata =
+/*#__PURE__*/
+function (_CharacterMetadataRec) {
   _inheritsLoose(CharacterMetadata, _CharacterMetadataRec);
 
   function CharacterMetadata() {
@@ -735,15 +737,6 @@ var CharacterMetadata = /*#__PURE__*/function (_CharacterMetadataRec) {
     var newCharacter = new CharacterMetadata(configMap);
     pool = pool.set(configMap, newCharacter);
     return newCharacter;
-  };
-
-  CharacterMetadata.fromJS = function fromJS(_ref) {
-    var style = _ref.style,
-        entity = _ref.entity;
-    return new CharacterMetadata({
-      style: Array.isArray(style) ? OrderedSet(style) : style,
-      entity: Array.isArray(entity) ? OrderedSet(entity) : entity
-    });
   };
 
   return CharacterMetadata;
@@ -1864,7 +1857,9 @@ var decorateCharacterList = function decorateCharacterList(config) {
   return config;
 };
 
-var ContentBlockNode = /*#__PURE__*/function (_ref) {
+var ContentBlockNode =
+/*#__PURE__*/
+function (_ref) {
   _inheritsLoose(ContentBlockNode, _ref);
 
   function ContentBlockNode() {
@@ -2119,7 +2114,11 @@ module.exports = removeEntitiesAtEdges;
  */
 
 
-var validateFormat =  false ? undefined : function (format) {};
+var validateFormat =  false ? undefined : function (format) {
+  if (format === undefined) {
+    throw new Error('invariant(...): Second argument must be a string.');
+  }
+};
 /**
  * Use invariant() to assert state which your program assumes to be true.
  *

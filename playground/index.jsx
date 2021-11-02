@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 // import Emoticon, { defaultEmoticons } from 'braft-extensions/dist/emoticon';
 
 // import BraftEditor from '../src_old';
-import BraftEditor from '../dist_old/index';
+import BraftEditor from '../src/index';
 
 import 'braft-extensions/dist/emoticon.css';
 import 'braft-extensions/dist/color-picker.css';
@@ -74,7 +74,7 @@ class App extends React.Component {
             // headings={['header-one', 'unstyled']}
             placeholder="Hello World!"
             // fixPlaceholder
-            // allowInsertLinkText
+            allowInsertLinkText
             // triggerChangeOnMount={false}
             // value={editorState}
             // onChange={this.handleChange}
