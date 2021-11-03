@@ -31,7 +31,6 @@ EditorState.prototype.toHTML = function toHTML(options = {}) {
 };
 
 EditorState.prototype.toRAW = function toRAW(noStringify) {
-  console.log(convertToRaw(this.getCurrentContent()))
   return noStringify
     ? convertToRaw(this.getCurrentContent())
     : JSON.stringify(convertEditorStateToRaw(this));

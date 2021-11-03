@@ -7,11 +7,12 @@ import ReactDOM from 'react-dom';
 
 // import BraftEditor from '../src_old';
 import BraftEditor from '../src/index';
+// import '../dist/index.css';
 
-import 'braft-extensions/dist/emoticon.css';
-import 'braft-extensions/dist/color-picker.css';
-import 'braft-extensions/dist/table.css';
-import 'braft-extensions/dist/code-highlighter.css';
+// import 'braft-extensions/dist/emoticon.css';
+// import 'braft-extensions/dist/color-picker.css';
+// import 'braft-extensions/dist/table.css';
+// import 'braft-extensions/dist/code-highlighter.css';
 
 /*
 const emoticons = defaultEmoticons.map((item) =>
@@ -50,8 +51,9 @@ class App extends React.Component {
   }
 
   handleChange = (editorState) => {
-    console.log('change');
-    this.setState({ editorState });
+    this.setState({ editorState }, () => {
+      this.logHTML();
+    });
   };
 
   logHTML = () => {
@@ -63,21 +65,21 @@ class App extends React.Component {
   };
 
   render() {
-    // const { readOnly, editorState } = this.state;
+    const { editorState } = this.state;
 
     return (
       <div>
         <div className="demo" id="demo">
-          11111
           <BraftEditor
             // colors={['#e25041']}
             // headings={['header-one', 'unstyled']}
             placeholder="Hello World!"
+            language="zh"
             // fixPlaceholder
-            allowInsertLinkText
+            // allowInsertLinkText
             // triggerChangeOnMount={false}
-            // value={editorState}
-            // onChange={this.handleChange}
+            value={editorState}
+            onChange={this.handleChange}
             // readOnly={readOnly}
             // hooks={hooks}
             // imageResizable

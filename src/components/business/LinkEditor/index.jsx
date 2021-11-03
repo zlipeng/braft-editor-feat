@@ -24,6 +24,7 @@ class LinkEditor extends React.Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
     const { href, target } = ContentUtils.getSelectionEntityData(
       nextProps.editorState,
       'LINK',
@@ -32,11 +33,15 @@ class LinkEditor extends React.Component {
       !ContentUtils.isSelectionCollapsed(this.props.editorState) &&
       ContentUtils.getSelectionBlockType(this.props.editorState) !== 'atomic';
 
+    console.log(textSelected, 'textSelected')
+
     let selectedText = '';
 
     if (textSelected) {
       selectedText = ContentUtils.getSelectionText(this.props.editorState);
     }
+
+    console.log(selectedText)
 
     this.setState({
       textSelected,
@@ -85,10 +90,12 @@ class LinkEditor extends React.Component {
   };
 
   handleCancel = () => {
+    console.log('cancel')
     this.dropDownInstance.current.hide();
   };
 
   handleUnlink = () => {
+    console.log('unlink')
     this.dropDownInstance.current.hide();
     this.props.editor.setValue(
       ContentUtils.toggleSelectionLink(this.props.editorState, false),
@@ -97,13 +104,13 @@ class LinkEditor extends React.Component {
 
   handleConfirm = () => {
     let { href, target } = this.state;
-    const { rel } = this.state;
-    const { text, textSelected } = this.state;
+    const { text, textSelected, rel } = this.state;
     const hookReturns = this.props.hooks('toggle-link', { href, target, rel })({
       href,
       target,
       rel,
     });
+    console.log('confirm')
 
     this.dropDownInstance.current.hide();
     this.props.editor.requestFocus();

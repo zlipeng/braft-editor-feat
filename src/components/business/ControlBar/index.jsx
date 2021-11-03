@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ContentUtils } from 'braft-utils-v2';
 
 import getEditorControls from 'configs/controls';
-import LinkEditor from 'components/business/LinkEditor';
+import LinkEditor from 'components/business/LinkEditor/LinkEditor';
 import HeadingPicker from 'components/business/Headings';
 import TextColorPicker from 'components/business/TextColor';
 import FontSizePicker from 'components/business/FontSize';

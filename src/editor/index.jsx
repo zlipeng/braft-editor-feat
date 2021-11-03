@@ -245,9 +245,8 @@ class BraftEditor extends React.Component {
 
   componentWillUnmount() {
     this.isLiving = false;
-    console.log(this.controlBarInstance)
     if (this.controlBarInstance) {
-      this.controlBarInstance.closeBraftFinder();
+      this.controlBarInstance.current.closeBraftFinder();
     }
   }
 
@@ -542,14 +541,11 @@ class BraftEditor extends React.Component {
       commonProps,
       this.editorProps.blockRendererFn,
     );
-    console.log('blockRendererFn', blockRendererFn)
     const blockRenderMap = getBlockRenderMap(
       commonProps,
       this.editorProps.blockRenderMap,
     );
-    console.log('blockRenderMap', blockRenderMap)
     const blockStyleFn = getBlockStyleFn(this.editorProps.blockStyleFn);
-    console.log('blockStyleFn', blockStyleFn)
     const customStyleMap = getCustomStyleMap(
       commonProps,
       this.editorProps.customStyleMap,
