@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // import Table from 'braft-extensions/dist/table';
 // import CodeHighlighter from 'braft-extensions/dist/code-highlighter';
 // import Emoticon, { defaultEmoticons } from 'braft-extensions/dist/emoticon';
-
+import { convertHTMLToRaw } from '../src/convert'
 // import BraftEditor from '../src_old';
 import BraftEditor from '../src/index';
 // import '../dist/index.css';
@@ -46,18 +46,22 @@ class App extends React.Component {
 
     this.state = {
       // readOnly: false,
-      // editorState: BraftEditor.createEditorState(),
+      editorState: BraftEditor.createEditorState(convertHTMLToRaw('<p>123</p>')),
     };
   }
 
   handleChange = (editorState) => {
     this.setState({ editorState }, () => {
       this.logHTML();
+      // this.logRAW();
     });
   };
 
   logHTML = () => {
-    console.log(this.state.editorState.toHTML());
+    const html = this.state.editorState.toHTML();
+    console.log(html);
+    const es = BraftEditor.createEditorState(html);
+    console.log(es.toHTML())
   };
 
   logRAW = () => {

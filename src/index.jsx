@@ -3,7 +3,7 @@ import {
   convertHTMLToEditorState,
   convertEditorStateToRaw,
   convertEditorStateToHTML,
-} from 'braft-convert';
+} from 'convert';
 
 import {
   createExtensibleEditor,
@@ -16,8 +16,6 @@ import {
 } from 'helpers/extension';
 import { getDecorators } from 'renderers';
 import BraftEditor, { EditorState } from 'editor';
-
-import { convertToRaw } from 'draft-js'
 
 EditorState.prototype.setConvertOptions = function setConvertOptions(
   options = {},
@@ -32,7 +30,7 @@ EditorState.prototype.toHTML = function toHTML(options = {}) {
 
 EditorState.prototype.toRAW = function toRAW(noStringify) {
   return noStringify
-    ? convertToRaw(this.getCurrentContent())
+    ? convertEditorStateToRaw(this)
     : JSON.stringify(convertEditorStateToRaw(this));
 };
 
@@ -109,7 +107,8 @@ EditorState.createFrom = (content, options = {}) => {
       customOptions,
       'create',
     );
-  } else {
+  }
+  if (typeof content !== 'number' && typeof content !== 'string' && typeof content !== 'object') {
     editorState = EditorState.createEmpty(
       getDecorators(customOptions.editorId),
     );
