@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("braft-utils-v2"), require("draft-js"), require("immutable"), require("braft-convert"), require("react-dom"), require("braft-finder"), require("draftjs-utils"));
+		module.exports = factory(require("react"), require("braft-utils-v2"), require("draft-js"), require("immutable"), require("draft-convert"), require("react-dom"), require("braft-finder"), require("draftjs-utils"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "braft-utils-v2", "draft-js", "immutable", "braft-convert", "react-dom", "braft-finder", "draftjs-utils"], factory);
+		define(["react", "braft-utils-v2", "draft-js", "immutable", "draft-convert", "react-dom", "braft-finder", "draftjs-utils"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("braft-utils-v2"), require("draft-js"), require("immutable"), require("braft-convert"), require("react-dom"), require("braft-finder"), require("draftjs-utils")) : factory(root["react"], root["braft-utils-v2"], root["draft-js"], root["immutable"], root["braft-convert"], root["react-dom"], root["braft-finder"], root["draftjs-utils"]);
+		var a = typeof exports === 'object' ? factory(require("react"), require("braft-utils-v2"), require("draft-js"), require("immutable"), require("draft-convert"), require("react-dom"), require("braft-finder"), require("draftjs-utils")) : factory(root["react"], root["braft-utils-v2"], root["draft-js"], root["immutable"], root["draft-convert"], root["react-dom"], root["braft-finder"], root["draftjs-utils"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__6__, __WEBPACK_EXTERNAL_MODULE__14__, __WEBPACK_EXTERNAL_MODULE__16__, __WEBPACK_EXTERNAL_MODULE__18__, __WEBPACK_EXTERNAL_MODULE__22__, __WEBPACK_EXTERNAL_MODULE__28__) {
+})(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__6__, __WEBPACK_EXTERNAL_MODULE__14__, __WEBPACK_EXTERNAL_MODULE__17__, __WEBPACK_EXTERNAL_MODULE__19__, __WEBPACK_EXTERNAL_MODULE__22__, __WEBPACK_EXTERNAL_MODULE__28__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -114,7 +114,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(33)();
+  module.exports = __webpack_require__(34)();
 }
 
 
@@ -194,13 +194,13 @@ Object.defineProperty(exports, "v5", {
   }
 });
 
-var _v = _interopRequireDefault(__webpack_require__(35));
+var _v = _interopRequireDefault(__webpack_require__(36));
 
-var _v2 = _interopRequireDefault(__webpack_require__(36));
+var _v2 = _interopRequireDefault(__webpack_require__(37));
 
-var _v3 = _interopRequireDefault(__webpack_require__(38));
+var _v3 = _interopRequireDefault(__webpack_require__(39));
 
-var _v4 = _interopRequireDefault(__webpack_require__(39));
+var _v4 = _interopRequireDefault(__webpack_require__(40));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -212,18 +212,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__6__;
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports) {
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-module.exports = _classCallCheck;
-
-/***/ }),
-/* 8 */
 /***/ (function(module, exports) {
 
 function _extends() {
@@ -245,6 +233,18 @@ function _extends() {
 }
 
 module.exports = _extends;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
 
 /***/ }),
 /* 9 */
@@ -272,7 +272,7 @@ module.exports = _createClass;
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _typeof = __webpack_require__(17);
+var _typeof = __webpack_require__(18);
 
 var assertThisInitialized = __webpack_require__(3);
 
@@ -303,7 +303,7 @@ module.exports = _getPrototypeOf;
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var setPrototypeOf = __webpack_require__(32);
+var setPrototypeOf = __webpack_require__(33);
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
@@ -326,11 +326,11 @@ module.exports = _inherits;
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithoutHoles = __webpack_require__(41);
+var arrayWithoutHoles = __webpack_require__(42);
 
-var iterableToArray = __webpack_require__(42);
+var iterableToArray = __webpack_require__(43);
 
-var nonIterableSpread = __webpack_require__(43);
+var nonIterableSpread = __webpack_require__(44);
 
 function _toConsumableArray(arr) {
   return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
@@ -348,11 +348,11 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__14__;
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithHoles = __webpack_require__(29);
+var arrayWithHoles = __webpack_require__(30);
 
-var iterableToArrayLimit = __webpack_require__(30);
+var iterableToArrayLimit = __webpack_require__(31);
 
-var nonIterableRest = __webpack_require__(31);
+var nonIterableRest = __webpack_require__(32);
 
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
@@ -362,43 +362,9 @@ module.exports = _slicedToArray;
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__16__;
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    module.exports = _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    module.exports = _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-module.exports = _typeof;
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__18__;
-
-/***/ }),
-/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var objectWithoutPropertiesLoose = __webpack_require__(44);
+var objectWithoutPropertiesLoose = __webpack_require__(29);
 
 function _objectWithoutProperties(source, excluded) {
   if (source == null) return {};
@@ -420,6 +386,40 @@ function _objectWithoutProperties(source, excluded) {
 }
 
 module.exports = _objectWithoutProperties;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__17__;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__19__;
 
 /***/ }),
 /* 20 */
@@ -661,53 +661,62 @@ function _default(name, version, hashfunc) {
 
 "use strict";
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * @providesModule CharacterMetadata
  * @format
  * 
- * @emails oncall+draft_js
  */
 
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _require = __webpack_require__(14),
     Map = _require.Map,
     OrderedSet = _require.OrderedSet,
-    Record = _require.Record; // Immutable.map is typed such that the value for every key in the map
+    Record = _require.Record;
+
+// Immutable.map is typed such that the value for every key in the map
 // must be the same type
 
 
 var EMPTY_SET = OrderedSet();
+
 var defaultRecord = {
   style: EMPTY_SET,
   entity: null
 };
+
 var CharacterMetadataRecord = Record(defaultRecord);
 
-var CharacterMetadata =
-/*#__PURE__*/
-function (_CharacterMetadataRec) {
-  _inheritsLoose(CharacterMetadata, _CharacterMetadataRec);
+var CharacterMetadata = function (_CharacterMetadataRec) {
+  _inherits(CharacterMetadata, _CharacterMetadataRec);
 
   function CharacterMetadata() {
-    return _CharacterMetadataRec.apply(this, arguments) || this;
+    _classCallCheck(this, CharacterMetadata);
+
+    return _possibleConstructorReturn(this, _CharacterMetadataRec.apply(this, arguments));
   }
 
-  var _proto = CharacterMetadata.prototype;
-
-  _proto.getStyle = function getStyle() {
+  CharacterMetadata.prototype.getStyle = function getStyle() {
     return this.get('style');
   };
 
-  _proto.getEntity = function getEntity() {
+  CharacterMetadata.prototype.getEntity = function getEntity() {
     return this.get('entity');
   };
 
-  _proto.hasStyle = function hasStyle(style) {
+  CharacterMetadata.prototype.hasStyle = function hasStyle(style) {
     return this.getStyle().includes(style);
   };
 
@@ -724,14 +733,15 @@ function (_CharacterMetadataRec) {
   CharacterMetadata.applyEntity = function applyEntity(record, entityKey) {
     var withEntity = record.getEntity() === entityKey ? record : record.set('entity', entityKey);
     return CharacterMetadata.create(withEntity);
-  }
+  };
+
   /**
    * Use this function instead of the `CharacterMetadata` constructor.
    * Since most content generally uses only a very small number of
    * style/entity permutations, we can reuse these objects as often as
    * possible.
    */
-  ;
+
 
   CharacterMetadata.create = function create(config) {
     if (!config) {
@@ -741,11 +751,12 @@ function (_CharacterMetadataRec) {
     var defaultConfig = {
       style: EMPTY_SET,
       entity: null
-    }; // Fill in unspecified properties, if necessary.
+    };
 
+    // Fill in unspecified properties, if necessary.
     var configMap = Map(defaultConfig).merge(config);
-    var existing = pool.get(configMap);
 
+    var existing = pool.get(configMap);
     if (existing) {
       return existing;
     }
@@ -760,7 +771,9 @@ function (_CharacterMetadataRec) {
 
 var EMPTY = new CharacterMetadata();
 var pool = Map([[Map(defaultRecord), EMPTY]]);
+
 CharacterMetadata.EMPTY = EMPTY;
+
 module.exports = CharacterMetadata;
 
 /***/ }),
@@ -769,15 +782,18 @@ module.exports = CharacterMetadata;
 
 "use strict";
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * @providesModule findRangesImmutable
  * @format
  * 
- * @emails oncall+draft_js
  */
+
 
 
 /**
@@ -793,17 +809,17 @@ function findRangesImmutable(haystack, areEqualFn, filterFn, foundFn) {
   }
 
   var cursor = 0;
+
   haystack.reduce(function (value, nextValue, nextIndex) {
     if (!areEqualFn(value, nextValue)) {
       if (filterFn(value)) {
         foundFn(cursor, nextIndex);
       }
-
       cursor = nextIndex;
     }
-
     return nextValue;
   });
+
   filterFn(haystack.last()) && foundFn(cursor, haystack.count());
 }
 
@@ -815,15 +831,18 @@ module.exports = findRangesImmutable;
 
 "use strict";
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * @providesModule getFragmentFromSelection
  * @format
  * 
- * @emails oncall+draft_js
  */
+
 
 
 var getContentStateFragment = __webpack_require__(45);
@@ -850,6 +869,27 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__28__;
 /* 29 */
 /***/ (function(module, exports) {
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutPropertiesLoose;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
@@ -857,7 +897,7 @@ function _arrayWithHoles(arr) {
 module.exports = _arrayWithHoles;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 function _iterableToArrayLimit(arr, i) {
@@ -893,7 +933,7 @@ function _iterableToArrayLimit(arr, i) {
 module.exports = _iterableToArrayLimit;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 function _nonIterableRest() {
@@ -903,7 +943,7 @@ function _nonIterableRest() {
 module.exports = _nonIterableRest;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 function _setPrototypeOf(o, p) {
@@ -918,7 +958,7 @@ function _setPrototypeOf(o, p) {
 module.exports = _setPrototypeOf;
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -931,7 +971,7 @@ module.exports = _setPrototypeOf;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(34);
+var ReactPropTypesSecret = __webpack_require__(35);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -989,7 +1029,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1008,7 +1048,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1122,7 +1162,7 @@ exports.default = _default;
 module.exports = exports.default;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1135,7 +1175,7 @@ exports.default = void 0;
 
 var _v = _interopRequireDefault(__webpack_require__(24));
 
-var _md = _interopRequireDefault(__webpack_require__(37));
+var _md = _interopRequireDefault(__webpack_require__(38));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1145,7 +1185,7 @@ exports.default = _default;
 module.exports = exports.default;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1376,7 +1416,7 @@ exports.default = _default;
 module.exports = exports.default;
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1423,7 +1463,7 @@ exports.default = _default;
 module.exports = exports.default;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1436,7 +1476,7 @@ exports.default = void 0;
 
 var _v = _interopRequireDefault(__webpack_require__(24));
 
-var _sha = _interopRequireDefault(__webpack_require__(40));
+var _sha = _interopRequireDefault(__webpack_require__(41));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1446,7 +1486,7 @@ exports.default = _default;
 module.exports = exports.default;
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1548,7 +1588,7 @@ exports.default = _default;
 module.exports = exports.default;
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 function _arrayWithoutHoles(arr) {
@@ -1564,7 +1604,7 @@ function _arrayWithoutHoles(arr) {
 module.exports = _arrayWithoutHoles;
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 function _iterableToArray(iter) {
@@ -1574,7 +1614,7 @@ function _iterableToArray(iter) {
 module.exports = _iterableToArray;
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 function _nonIterableSpread() {
@@ -1584,60 +1624,44 @@ function _nonIterableSpread() {
 module.exports = _nonIterableSpread;
 
 /***/ }),
-/* 44 */
-/***/ (function(module, exports) {
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-module.exports = _objectWithoutPropertiesLoose;
-
-/***/ }),
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * @providesModule getContentStateFragment
  * @format
  * 
- * @emails oncall+draft_js
  */
 
 
-var randomizeBlockMapKeys = __webpack_require__(46);
 
+var randomizeBlockMapKeys = __webpack_require__(46);
 var removeEntitiesAtEdges = __webpack_require__(49);
 
 var getContentStateFragment = function getContentStateFragment(contentState, selectionState) {
   var startKey = selectionState.getStartKey();
   var startOffset = selectionState.getStartOffset();
   var endKey = selectionState.getEndKey();
-  var endOffset = selectionState.getEndOffset(); // Edge entities should be stripped to ensure that we don't preserve
+  var endOffset = selectionState.getEndOffset();
+
+  // Edge entities should be stripped to ensure that we don't preserve
   // invalid partial entities when the fragment is reused. We do, however,
   // preserve entities that are entirely within the selection range.
-
   var contentWithoutEdgeEntities = removeEntitiesAtEdges(contentState, selectionState);
+
   var blockMap = contentWithoutEdgeEntities.getBlockMap();
   var blockKeys = blockMap.keySeq();
   var startIndex = blockKeys.indexOf(startKey);
   var endIndex = blockKeys.indexOf(endKey) + 1;
+
   return randomizeBlockMapKeys(blockMap.slice(startIndex, endIndex).map(function (block, blockKey) {
     var text = block.getText();
     var chars = block.getCharacterList();
@@ -1675,44 +1699,50 @@ module.exports = getContentStateFragment;
 
 "use strict";
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * @providesModule randomizeBlockMapKeys
  * @format
  * 
- * @emails oncall+draft_js
  */
 
 
+
 var ContentBlockNode = __webpack_require__(47);
+var Immutable = __webpack_require__(14);
 
 var generateRandomKey = __webpack_require__(48);
 
-var Immutable = __webpack_require__(14);
-
 var OrderedMap = Immutable.OrderedMap;
 
-var randomizeContentBlockNodeKeys = function randomizeContentBlockNodeKeys(blockMap) {
-  var newKeysRef = {}; // we keep track of root blocks in order to update subsequent sibling links
 
-  var lastRootBlock;
+var randomizeContentBlockNodeKeys = function randomizeContentBlockNodeKeys(blockMap) {
+  var newKeysRef = {};
+
+  // we keep track of root blocks in order to update subsequent sibling links
+  var lastRootBlock = void 0;
+
   return OrderedMap(blockMap.withMutations(function (blockMapState) {
     blockMapState.forEach(function (block, index) {
       var oldKey = block.getKey();
       var nextKey = block.getNextSiblingKey();
       var prevKey = block.getPrevSiblingKey();
       var childrenKeys = block.getChildKeys();
-      var parentKey = block.getParentKey(); // new key that we will use to build linking
+      var parentKey = block.getParentKey();
 
-      var key = generateRandomKey(); // we will add it here to re-use it later
+      // new key that we will use to build linking
+      var key = generateRandomKey();
 
+      // we will add it here to re-use it later
       newKeysRef[oldKey] = key;
 
       if (nextKey) {
         var nextBlock = blockMapState.get(nextKey);
-
         if (nextBlock) {
           blockMapState.setIn([nextKey, 'prevSibling'], key);
         } else {
@@ -1723,7 +1753,6 @@ var randomizeContentBlockNodeKeys = function randomizeContentBlockNodeKeys(block
 
       if (prevKey) {
         var prevBlock = blockMapState.get(prevKey);
-
         if (prevBlock) {
           blockMapState.setIn([prevKey, 'nextSibling'], key);
         } else {
@@ -1750,7 +1779,6 @@ var randomizeContentBlockNodeKeys = function randomizeContentBlockNodeKeys(block
 
       childrenKeys.forEach(function (childKey) {
         var childBlock = blockMapState.get(childKey);
-
         if (childBlock) {
           blockMapState.setIn([childKey, 'parent'], key);
         } else {
@@ -1790,14 +1818,16 @@ module.exports = randomizeBlockMapKeys;
 
 "use strict";
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * @providesModule ContentBlockNode
  * @format
  * 
- * @emails oncall+draft_js
  *
  * This file is a fork of ContentBlock adding support for nesting references by
  * providing links to children, parent, prevSibling, and nextSibling.
@@ -1807,20 +1837,27 @@ module.exports = randomizeBlockMapKeys;
  */
 
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var CharacterMetadata = __webpack_require__(25);
+var Immutable = __webpack_require__(14);
 
 var findRangesImmutable = __webpack_require__(26);
-
-var Immutable = __webpack_require__(14);
 
 var List = Immutable.List,
     Map = Immutable.Map,
     OrderedSet = Immutable.OrderedSet,
     Record = Immutable.Record,
     Repeat = Immutable.Repeat;
+
+
 var EMPTY_SET = OrderedSet();
+
 var defaultRecord = {
   parent: null,
   characterList: List(),
@@ -1850,6 +1887,7 @@ var decorateCharacterList = function decorateCharacterList(config) {
   var characterList = config.characterList,
       text = config.text;
 
+
   if (text && !characterList) {
     config.characterList = List(Repeat(CharacterMetadata.EMPTY, text.length));
   }
@@ -1857,79 +1895,76 @@ var decorateCharacterList = function decorateCharacterList(config) {
   return config;
 };
 
-var ContentBlockNode =
-/*#__PURE__*/
-function (_ref) {
-  _inheritsLoose(ContentBlockNode, _ref);
+var ContentBlockNode = function (_Record) {
+  _inherits(ContentBlockNode, _Record);
 
   function ContentBlockNode() {
     var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultRecord;
 
-    /* eslint-disable-next-line constructor-super */
-    return _ref.call(this, decorateCharacterList(props)) || this;
+    _classCallCheck(this, ContentBlockNode);
+
+    return _possibleConstructorReturn(this, _Record.call(this, decorateCharacterList(props)));
   }
 
-  var _proto = ContentBlockNode.prototype;
-
-  _proto.getKey = function getKey() {
+  ContentBlockNode.prototype.getKey = function getKey() {
     return this.get('key');
   };
 
-  _proto.getType = function getType() {
+  ContentBlockNode.prototype.getType = function getType() {
     return this.get('type');
   };
 
-  _proto.getText = function getText() {
+  ContentBlockNode.prototype.getText = function getText() {
     return this.get('text');
   };
 
-  _proto.getCharacterList = function getCharacterList() {
+  ContentBlockNode.prototype.getCharacterList = function getCharacterList() {
     return this.get('characterList');
   };
 
-  _proto.getLength = function getLength() {
+  ContentBlockNode.prototype.getLength = function getLength() {
     return this.getText().length;
   };
 
-  _proto.getDepth = function getDepth() {
+  ContentBlockNode.prototype.getDepth = function getDepth() {
     return this.get('depth');
   };
 
-  _proto.getData = function getData() {
+  ContentBlockNode.prototype.getData = function getData() {
     return this.get('data');
   };
 
-  _proto.getInlineStyleAt = function getInlineStyleAt(offset) {
+  ContentBlockNode.prototype.getInlineStyleAt = function getInlineStyleAt(offset) {
     var character = this.getCharacterList().get(offset);
     return character ? character.getStyle() : EMPTY_SET;
   };
 
-  _proto.getEntityAt = function getEntityAt(offset) {
+  ContentBlockNode.prototype.getEntityAt = function getEntityAt(offset) {
     var character = this.getCharacterList().get(offset);
     return character ? character.getEntity() : null;
   };
 
-  _proto.getChildKeys = function getChildKeys() {
+  ContentBlockNode.prototype.getChildKeys = function getChildKeys() {
     return this.get('children');
   };
 
-  _proto.getParentKey = function getParentKey() {
+  ContentBlockNode.prototype.getParentKey = function getParentKey() {
     return this.get('parent');
   };
 
-  _proto.getPrevSiblingKey = function getPrevSiblingKey() {
+  ContentBlockNode.prototype.getPrevSiblingKey = function getPrevSiblingKey() {
     return this.get('prevSibling');
   };
 
-  _proto.getNextSiblingKey = function getNextSiblingKey() {
+  ContentBlockNode.prototype.getNextSiblingKey = function getNextSiblingKey() {
     return this.get('nextSibling');
   };
 
-  _proto.findStyleRanges = function findStyleRanges(filterFn, callback) {
+  ContentBlockNode.prototype.findStyleRanges = function findStyleRanges(filterFn, callback) {
     findRangesImmutable(this.getCharacterList(), haveEqualStyle, filterFn, callback);
   };
 
-  _proto.findEntityRanges = function findEntityRanges(filterFn, callback) {
+  ContentBlockNode.prototype.findEntityRanges = function findEntityRanges(filterFn, callback) {
     findRangesImmutable(this.getCharacterList(), haveEqualEntity, filterFn, callback);
   };
 
@@ -1944,27 +1979,28 @@ module.exports = ContentBlockNode;
 
 "use strict";
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * @providesModule generateRandomKey
  * @format
  * 
- * @emails oncall+draft_js
  */
+
 
 
 var seenKeys = {};
 var MULTIPLIER = Math.pow(2, 24);
 
 function generateRandomKey() {
-  var key;
-
+  var key = void 0;
   while (key === undefined || seenKeys.hasOwnProperty(key) || !isNaN(+key)) {
     key = Math.floor(Math.random() * MULTIPLIER).toString(32);
   }
-
   seenKeys[key] = true;
   return key;
 }
@@ -1977,27 +2013,31 @@ module.exports = generateRandomKey;
 
 "use strict";
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * @providesModule removeEntitiesAtEdges
  * @format
  * 
- * @emails oncall+draft_js
  */
+
 
 
 var CharacterMetadata = __webpack_require__(25);
 
 var findRangesImmutable = __webpack_require__(26);
-
 var invariant = __webpack_require__(50);
 
 function removeEntitiesAtEdges(contentState, selectionState) {
   var blockMap = contentState.getBlockMap();
   var entityMap = contentState.getEntityMap();
+
   var updatedBlocks = {};
+
   var startKey = selectionState.getStartKey();
   var startOffset = selectionState.getStartOffset();
   var startBlock = blockMap.get(startKey);
@@ -2010,7 +2050,6 @@ function removeEntitiesAtEdges(contentState, selectionState) {
   var endKey = selectionState.getEndKey();
   var endOffset = selectionState.getEndOffset();
   var endBlock = blockMap.get(endKey);
-
   if (startKey === endKey) {
     endBlock = updatedStart;
   }
@@ -2030,37 +2069,16 @@ function removeEntitiesAtEdges(contentState, selectionState) {
     selectionAfter: selectionState
   });
 }
-/**
- * Given a list of characters and an offset that is in the middle of an entity,
- * returns the start and end of the entity that is overlapping the offset.
- * Note: This method requires that the offset be in an entity range.
- */
 
-
-function getRemovalRange(characters, entityKey, offset) {
-  var removalRange; // Iterates through a list looking for ranges of matching items
-  // based on the 'isEqual' callback.
-  // Then instead of returning the result, call the 'found' callback
-  // with each range.
-  // Then filters those ranges based on the 'filter' callback
-  //
-  // Here we use it to find ranges of characters with the same entity key.
-
-  findRangesImmutable(characters, // the list to iterate through
-  function (a, b) {
+function getRemovalRange(characters, key, offset) {
+  var removalRange;
+  findRangesImmutable(characters, function (a, b) {
     return a.getEntity() === b.getEntity();
-  }, // 'isEqual' callback
-  function (element) {
-    return element.getEntity() === entityKey;
-  }, // 'filter' callback
-  function (start, end) {
-    // 'found' callback
+  }, function (element) {
+    return element.getEntity() === key;
+  }, function (start, end) {
     if (start <= offset && end >= offset) {
-      // this entity overlaps the offset index
-      removalRange = {
-        start: start,
-        end: end
-      };
+      removalRange = { start: start, end: end };
     }
   });
   !(typeof removalRange === 'object') ?  false ? undefined : invariant(false) : void 0;
@@ -2076,20 +2094,17 @@ function removeForBlock(entityMap, block, offset) {
 
   if (entityAfterCursor && entityAfterCursor === entityBeforeCursor) {
     var entity = entityMap.__get(entityAfterCursor);
-
     if (entity.getMutability() !== 'MUTABLE') {
       var _getRemovalRange = getRemovalRange(chars, entityAfterCursor, offset),
           start = _getRemovalRange.start,
           end = _getRemovalRange.end;
 
       var current;
-
       while (start < end) {
         current = chars.get(start);
         chars = chars.set(start, CharacterMetadata.applyEntity(current, null));
         start++;
       }
-
       return block.set('characterList', chars);
     }
   }
@@ -2110,47 +2125,42 @@ module.exports = removeEntitiesAtEdges;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
  */
 
 
-var validateFormat =  false ? undefined : function (format) {
-  if (format === undefined) {
-    throw new Error('invariant(...): Second argument must be a string.');
-  }
-};
+
 /**
  * Use invariant() to assert state which your program assumes to be true.
  *
- * Provide sprintf-style format (only %s is supported) and arguments to provide
- * information about what broke and what you were expecting.
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
  *
- * The invariant message will be stripped in production, but the invariant will
- * remain to ensure logic does not differ in production.
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
  */
 
-function invariant(condition, format) {
-  for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-    args[_key - 2] = arguments[_key];
-  }
+var validateFormat = function validateFormat(format) {};
 
+if (false) {}
+
+function invariant(condition, format, a, b, c, d, e, f) {
   validateFormat(format);
 
   if (!condition) {
     var error;
-
     if (format === undefined) {
       error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
     } else {
+      var args = [a, b, c, d, e, f];
       var argIndex = 0;
       error = new Error(format.replace(/%s/g, function () {
-        return String(args[argIndex++]);
+        return args[argIndex++];
       }));
       error.name = 'Invariant Violation';
     }
 
-    error.framesToPop = 1; // Skip invariant's own stack frame.
-
+    error.framesToPop = 1; // we don't care about invariant's own frame
     throw error;
   }
 }
@@ -2165,26 +2175,859 @@ module.exports = invariant;
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/typeof.js
-var helpers_typeof = __webpack_require__(17);
+var helpers_typeof = __webpack_require__(18);
 var typeof_default = /*#__PURE__*/__webpack_require__.n(helpers_typeof);
 
 // EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/defineProperty.js
 var defineProperty = __webpack_require__(2);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
-// EXTERNAL MODULE: external "braft-convert"
-var external_braft_convert_ = __webpack_require__(16);
+// EXTERNAL MODULE: external "draft-convert"
+var external_draft_convert_ = __webpack_require__(17);
+
+// EXTERNAL MODULE: external "draft-js"
+var external_draft_js_ = __webpack_require__(6);
+
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/extends.js
+var helpers_extends = __webpack_require__(7);
+var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
+
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/objectWithoutProperties.js
+var objectWithoutProperties = __webpack_require__(16);
+var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(0);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
 
-// CONCATENATED MODULE: ./helpers/extension.js
+// CONCATENATED MODULE: ./convert/configs.js
+
+
+
+/* eslint-disable react/no-danger */
+
+/* eslint-disable no-unused-expressions */
+
+/* eslint-disable consistent-return */
+
+/* eslint-disable no-param-reassign */
+
+/* eslint-disable jsx-a11y/anchor-has-content */
+
+/* eslint-disable jsx-a11y/media-has-caption */
+
+/* eslint-disable camelcase */
+
+/* eslint-disable jsx-a11y/alt-text */
+
+var namedColors = {
+  'aliceblue': '#f0f8ff',
+  'antiquewhite': '#faebd7',
+  'aqua': '#00ffff',
+  'aquamarine': '#7fffd4',
+  'azure': '#f0ffff',
+  'beige': '#f5f5dc',
+  'bisque': '#ffe4c4',
+  'black': '#000000',
+  'blanchedalmond': '#ffebcd',
+  'blue': '#0000ff',
+  'blueviolet': '#8a2be2',
+  'brown': '#a52a2a',
+  'burlywood': '#deb887',
+  'cadetblue': '#5f9ea0',
+  'chartreuse': '#7fff00',
+  'chocolate': '#d2691e',
+  'coral': '#ff7f50',
+  'cornflowerblue': '#6495ed',
+  'cornsilk': '#fff8dc',
+  'crimson': '#dc143c',
+  'cyan': '#00ffff',
+  'darkblue': '#00008b',
+  'darkcyan': '#008b8b',
+  'darkgoldenrod': '#b8860b',
+  'darkgray': '#a9a9a9',
+  'darkgreen': '#006400',
+  'darkkhaki': '#bdb76b',
+  'darkmagenta': '#8b008b',
+  'darkolivegreen': '#556b2f',
+  'darkorange': '#ff8c00',
+  'darkorchid': '#9932cc',
+  'darkred': '#8b0000',
+  'darksalmon': '#e9967a',
+  'darkseagreen': '#8fbc8f',
+  'darkslateblue': '#483d8b',
+  'darkslategray': '#2f4f4f',
+  'darkturquoise': '#00ced1',
+  'darkviolet': '#9400d3',
+  'deeppink': '#ff1493',
+  'deepskyblue': '#00bfff',
+  'dimgray': '#696969',
+  'dodgerblue': '#1e90ff',
+  'firebrick': '#b22222',
+  'floralwhite': '#fffaf0',
+  'forestgreen': '#228b22',
+  'fuchsia': '#ff00ff',
+  'gainsboro': '#dcdcdc',
+  'ghostwhite': '#f8f8ff',
+  'gold': '#ffd700',
+  'goldenrod': '#daa520',
+  'gray': '#808080',
+  'green': '#008000',
+  'greenyellow': '#adff2f',
+  'honeydew': '#f0fff0',
+  'hotpink': '#ff69b4',
+  'indianred ': '#cd5c5c',
+  'indigo': '#4b0082',
+  'ivory': '#fffff0',
+  'khaki': '#f0e68c',
+  'lavender': '#e6e6fa',
+  'lavenderblush': '#fff0f5',
+  'lawngreen': '#7cfc00',
+  'lemonchiffon': '#fffacd',
+  'lightblue': '#add8e6',
+  'lightcoral': '#f08080',
+  'lightcyan': '#e0ffff',
+  'lightgoldenrodyellow': '#fafad2',
+  'lightgrey': '#d3d3d3',
+  'lightgreen': '#90ee90',
+  'lightpink': '#ffb6c1',
+  'lightsalmon': '#ffa07a',
+  'lightseagreen': '#20b2aa',
+  'lightskyblue': '#87cefa',
+  'lightslategray': '#778899',
+  'lightsteelblue': '#b0c4de',
+  'lightyellow': '#ffffe0',
+  'lime': '#00ff00',
+  'limegreen': '#32cd32',
+  'linen': '#faf0e6',
+  'magenta': '#ff00ff',
+  'maroon': '#800000',
+  'mediumaquamarine': '#66cdaa',
+  'mediumblue': '#0000cd',
+  'mediumorchid': '#ba55d3',
+  'mediumpurple': '#9370d8',
+  'mediumseagreen': '#3cb371',
+  'mediumslateblue': '#7b68ee',
+  'mediumspringgreen': '#00fa9a',
+  'mediumturquoise': '#48d1cc',
+  'mediumvioletred': '#c71585',
+  'midnightblue': '#191970',
+  'mintcream': '#f5fffa',
+  'mistyrose': '#ffe4e1',
+  'moccasin': '#ffe4b5',
+  'navajowhite': '#ffdead',
+  'navy': '#000080',
+  'oldlace': '#fdf5e6',
+  'olive': '#808000',
+  'olivedrab': '#6b8e23',
+  'orange': '#ffa500',
+  'orangered': '#ff4500',
+  'orchid': '#da70d6',
+  'palegoldenrod': '#eee8aa',
+  'palegreen': '#98fb98',
+  'paleturquoise': '#afeeee',
+  'palevioletred': '#d87093',
+  'papayawhip': '#ffefd5',
+  'peachpuff': '#ffdab9',
+  'peru': '#cd853f',
+  'pink': '#ffc0cb',
+  'plum': '#dda0dd',
+  'powderblue': '#b0e0e6',
+  'purple': '#800080',
+  'rebeccapurple': '#663399',
+  'red': '#ff0000',
+  'rosybrown': '#bc8f8f',
+  'royalblue': '#4169e1',
+  'saddlebrown': '#8b4513',
+  'salmon': '#fa8072',
+  'sandybrown': '#f4a460',
+  'seagreen': '#2e8b57',
+  'seashell': '#fff5ee',
+  'sienna': '#a0522d',
+  'silver': '#c0c0c0',
+  'skyblue': '#87ceeb',
+  'slateblue': '#6a5acd',
+  'slategray': '#708090',
+  'snow': '#fffafa',
+  'springgreen': '#00ff7f',
+  'steelblue': '#4682b4',
+  'tan': '#d2b48c',
+  'teal': '#008080',
+  'thistle': '#d8bfd8',
+  'tomato': '#ff6347',
+  'turquoise': '#40e0d0',
+  'violet': '#ee82ee',
+  'wheat': '#f5deb3',
+  'white': '#ffffff',
+  'whitesmoke': '#f5f5f5',
+  'yellow': '#ffff00',
+  'yellowgreen': '#9acd32'
+};
+
+var getStyleValue = function getStyleValue(style) {
+  return style.split('-')[1];
+};
+
+var defaultUnitExportFn = function defaultUnitExportFn(unit) {
+  return "".concat(unit, "px");
+};
+
+var defaultUnitImportFn = function defaultUnitImportFn(unit) {
+  return unit.replace('px', '');
+};
+
+var ignoredNodeAttributes = ['style'];
+var ignoredEntityNodeAttributes = ['style', 'href', 'target', 'alt', 'title', 'id', 'controls', 'autoplay', 'loop', 'poster'];
+
+var spreadNodeAttributes = function spreadNodeAttributes(attributesObject) {
+  return Object.keys(attributesObject).reduce(function (attributeString, attributeName) {
+    return "".concat(attributeString, " ").concat(attributeName, "=\"").concat(attributesObject[attributeName], "\"");
+  }, '').replace(/^\s$/, '');
+};
+
+var defaultFontFamilies = [{
+  name: 'Araial',
+  family: 'Arial, Helvetica, sans-serif'
+}, {
+  name: 'Georgia',
+  family: 'Georgia, serif'
+}, {
+  name: 'Impact',
+  family: 'Impact, serif'
+}, {
+  name: 'Monospace',
+  family: '"Courier New", Courier, monospace'
+}, {
+  name: 'Tahoma',
+  family: "tahoma, arial, 'Hiragino Sans GB', 宋体, sans-serif"
+}];
+var getHexColor = function getHexColor(color) {
+  // eslint-disable-next-line no-param-reassign
+  color = color.replace('color:', '').replace(';', '').replace(' ', '');
+
+  if (/^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(color)) {
+    return color;
+  } else if (namedColors[color]) {
+    return namedColors[color];
+  } else if (color.indexOf('rgb') === 0) {
+    var rgbArray = color.split(',');
+    var convertedColor = rgbArray.length < 3 ? null : "#".concat([rgbArray[0], rgbArray[1], rgbArray[2]].map(function (x) {
+      var hex = parseInt(x.replace(/\D/g, ''), 10).toString(16);
+      return hex.length === 1 ? "0".concat(hex) : hex;
+    }).join(''));
+    return /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(convertedColor) ? convertedColor : null;
+  } else {
+    return null;
+  }
+};
+var blocks = {
+  'header-one': 'h1',
+  'header-two': 'h2',
+  'header-three': 'h3',
+  'header-four': 'h4',
+  'header-five': 'h5',
+  'header-six': 'h6',
+  'unstyled': 'p',
+  'blockquote': 'blockquote'
+};
+var blockTypes = Object.keys(blocks);
+var blockNames = blockTypes.map(function (key) {
+  return blocks[key];
+});
+
+var configs_convertAtomicBlock = function convertAtomicBlock(block, contentState, blockNodeAttributes) {
+  if (!block || !block.key) {
+    return external_react_default.a.createElement("p", null);
+  }
+
+  var contentBlock = contentState.getBlockForKey(block.key);
+
+  var className = blockNodeAttributes.class,
+      nodeAttrAsProps = objectWithoutProperties_default()(blockNodeAttributes, ["class"]);
+
+  nodeAttrAsProps.className = className;
+
+  if (!contentBlock) {
+    return external_react_default.a.createElement("p", null);
+  }
+
+  var entityKey = contentBlock.getEntityAt(0);
+
+  if (!entityKey) {
+    return external_react_default.a.createElement("p", null);
+  }
+
+  var entity = contentState.getEntity(entityKey);
+  var mediaType = entity.getType().toLowerCase();
+  var _block$data = block.data,
+      float = _block$data.float,
+      alignment = _block$data.alignment;
+
+  var _entity$getData = entity.getData(),
+      url = _entity$getData.url,
+      link = _entity$getData.link,
+      link_target = _entity$getData.link_target,
+      width = _entity$getData.width,
+      height = _entity$getData.height,
+      meta = _entity$getData.meta;
+
+  if (mediaType === 'image') {
+    var imageWrapStyle = {};
+    var styledClassName = '';
+
+    if (float) {
+      imageWrapStyle.float = float;
+      styledClassName += " float-".concat(float);
+    } else if (alignment) {
+      imageWrapStyle.textAlign = alignment;
+      styledClassName += " align-".concat(alignment);
+    }
+
+    if (link) {
+      return external_react_default.a.createElement("div", {
+        className: "media-wrap image-wrap".concat(styledClassName),
+        style: imageWrapStyle
+      }, external_react_default.a.createElement("a", {
+        style: {
+          display: 'inline-block'
+        },
+        href: link,
+        target: link_target
+      }, external_react_default.a.createElement("img", extends_default()({}, nodeAttrAsProps, meta, {
+        src: url,
+        width: width,
+        height: height,
+        style: {
+          width: width,
+          height: height
+        }
+      }))));
+    } else {
+      return external_react_default.a.createElement("div", {
+        className: "media-wrap image-wrap".concat(styledClassName),
+        style: imageWrapStyle
+      }, external_react_default.a.createElement("img", extends_default()({}, nodeAttrAsProps, meta, {
+        src: url,
+        width: width,
+        height: height,
+        style: {
+          width: width,
+          height: height
+        }
+      })));
+    }
+  } else if (mediaType === 'audio') {
+    return external_react_default.a.createElement("div", {
+      className: "media-wrap audio-wrap"
+    }, external_react_default.a.createElement("audio", extends_default()({
+      controls: true
+    }, nodeAttrAsProps, meta, {
+      src: url
+    })));
+  } else if (mediaType === 'video') {
+    return external_react_default.a.createElement("div", {
+      className: "media-wrap video-wrap"
+    }, external_react_default.a.createElement("video", extends_default()({
+      controls: true
+    }, nodeAttrAsProps, meta, {
+      src: url,
+      width: width,
+      height: height
+    })));
+  } else if (mediaType === 'embed') {
+    return external_react_default.a.createElement("div", {
+      className: "media-wrap embed-wrap"
+    }, external_react_default.a.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: url
+      }
+    }));
+  } else if (mediaType === 'hr') {
+    return external_react_default.a.createElement("hr", null);
+  } else {
+    return external_react_default.a.createElement("p", null);
+  }
+};
+
+var configs_entityToHTML = function entityToHTML(options) {
+  return function (entity, originalText) {
+    var entityExportFn = options.entityExportFn;
+    var entityType = entity.type.toLowerCase();
+
+    if (entityExportFn) {
+      var customOutput = entityExportFn(entity, originalText);
+
+      if (customOutput) {
+        return customOutput;
+      }
+    }
+
+    if (entityType === 'link') {
+      var _ref = entity.data.nodeAttributes || {},
+          className = _ref.class,
+          nodeAttrAsProps = objectWithoutProperties_default()(_ref, ["class"]);
+
+      nodeAttrAsProps.className = className;
+      var params = {
+        href: entity.data.href,
+        target: entity.data.target,
+        rel: entity.data.rel
+      };
+      return external_react_default.a.createElement("a", extends_default()({}, params, nodeAttrAsProps));
+    }
+  };
+};
+
+var configs_styleToHTML = function styleToHTML(options) {
+  return function (style) {
+    var unitExportFn = options.unitExportFn || defaultUnitExportFn;
+
+    if (options.styleExportFn) {
+      var customOutput = options.styleExportFn(style, options);
+
+      if (customOutput) {
+        return customOutput;
+      }
+    }
+
+    style = style.toLowerCase();
+
+    if (style === 'strikethrough') {
+      return external_react_default.a.createElement("span", {
+        style: {
+          textDecoration: 'line-through'
+        }
+      });
+    } else if (style === 'superscript') {
+      return external_react_default.a.createElement("sup", null);
+    } else if (style === 'subscript') {
+      return external_react_default.a.createElement("sub", null);
+    } else if (style.indexOf('color-') === 0) {
+      return external_react_default.a.createElement("span", {
+        style: {
+          color: "#".concat(getStyleValue(style))
+        }
+      });
+    } else if (style.indexOf('bgcolor-') === 0) {
+      return external_react_default.a.createElement("span", {
+        style: {
+          backgroundColor: "#".concat(getStyleValue(style))
+        }
+      });
+    } else if (style.indexOf('fontsize-') === 0) {
+      return external_react_default.a.createElement("span", {
+        style: {
+          fontSize: unitExportFn(getStyleValue(style), 'font-size', 'html')
+        }
+      });
+    } else if (style.indexOf('lineheight-') === 0) {
+      return external_react_default.a.createElement("span", {
+        style: {
+          lineHeight: unitExportFn(getStyleValue(style), 'line-height', 'html')
+        }
+      });
+    } else if (style.indexOf('letterspacing-') === 0) {
+      return external_react_default.a.createElement("span", {
+        style: {
+          letterSpacing: unitExportFn(getStyleValue(style), 'letter-spacing', 'html')
+        }
+      });
+    } else if (style.indexOf('fontfamily-') === 0) {
+      var fontFamily = options.fontFamilies.find(function (item) {
+        return item.name.toLowerCase() === getStyleValue(style);
+      });
+      if (!fontFamily) return;
+      return external_react_default.a.createElement("span", {
+        style: {
+          fontFamily: fontFamily.family
+        }
+      });
+    }
+  };
+};
+
+var configs_blockToHTML = function blockToHTML(options) {
+  return function (block) {
+    var blockExportFn = options.blockExportFn,
+        contentState = options.contentState;
+
+    if (blockExportFn) {
+      var customOutput = blockExportFn(contentState, block);
+
+      if (customOutput) {
+        return customOutput;
+      }
+    }
+
+    var blockStyle = '';
+    var blockType = block.type.toLowerCase();
+    var _block$data2 = block.data,
+        textAlign = _block$data2.textAlign,
+        textIndent = _block$data2.textIndent,
+        _block$data2$nodeAttr = _block$data2.nodeAttributes,
+        nodeAttributes = _block$data2$nodeAttr === void 0 ? {} : _block$data2$nodeAttr;
+    var attributeString = spreadNodeAttributes(nodeAttributes);
+
+    if (textAlign || textIndent) {
+      blockStyle = ' style="';
+
+      if (textAlign) {
+        blockStyle += "text-align:".concat(textAlign, ";");
+      }
+
+      if (textIndent && !isNaN(textIndent) && textIndent > 0) {
+        blockStyle += "text-indent:".concat(textIndent * 2, "em;");
+      }
+
+      blockStyle += '"';
+    }
+
+    if (blockType === 'atomic') {
+      return configs_convertAtomicBlock(block, contentState, nodeAttributes);
+    } else if (blockType === 'code-block') {
+      var previousBlock = contentState.getBlockBefore(block.key);
+      var nextBlock = contentState.getBlockAfter(block.key);
+      var previousBlockType = previousBlock && previousBlock.getType();
+      var nextBlockType = nextBlock && nextBlock.getType();
+      var start = '';
+      var end = '';
+
+      if (previousBlockType !== 'code-block') {
+        start = "<pre".concat(attributeString, "><code>");
+      } else {
+        start = '';
+      }
+
+      if (nextBlockType !== 'code-block') {
+        end = '</code></pre>';
+      } else {
+        end = '<br/>';
+      }
+
+      return {
+        start: start,
+        end: end
+      };
+    } else if (blocks[blockType]) {
+      return {
+        start: "<".concat(blocks[blockType]).concat(blockStyle).concat(attributeString, ">"),
+        end: "</".concat(blocks[blockType], ">")
+      };
+    } else if (blockType === 'unordered-list-item') {
+      return {
+        start: "<li".concat(blockStyle).concat(attributeString, ">"),
+        end: '</li>',
+        nest: external_react_default.a.createElement("ul", null)
+      };
+    } else if (blockType === 'ordered-list-item') {
+      return {
+        start: "<li".concat(blockStyle).concat(attributeString, ">"),
+        end: '</li>',
+        nest: external_react_default.a.createElement("ol", null)
+      };
+    }
+  };
+};
+
+var htmlToStyle = function htmlToStyle(options, source) {
+  return function (nodeName, node, currentStyle) {
+    if (!node || !node.style) {
+      return currentStyle;
+    }
+
+    var unitImportFn = options.unitImportFn || defaultUnitImportFn;
+    var newStyle = currentStyle;
+    [].forEach.call(node.style, function (style) {
+      if (nodeName === 'span' && style === 'color') {
+        var color = getHexColor(node.style.color);
+        newStyle = color ? newStyle.add("COLOR-".concat(color.replace('#', '').toUpperCase())) : newStyle;
+      } else if (nodeName === 'span' && style === 'background-color') {
+        var _color = getHexColor(node.style.backgroundColor);
+
+        newStyle = _color ? newStyle.add("BGCOLOR-".concat(_color.replace('#', '').toUpperCase())) : newStyle;
+      } else if (nodeName === 'span' && style === 'font-size') {
+        newStyle = newStyle.add("FONTSIZE-".concat(unitImportFn(node.style.fontSize, 'font-size', source)));
+      } else if (nodeName === 'span' && style === 'line-height' && !isNaN(parseFloat(node.style.lineHeight, 10))) {
+        newStyle = newStyle.add("LINEHEIGHT-".concat(unitImportFn(node.style.lineHeight, 'line-height', source)));
+      } else if (nodeName === 'span' && style === 'letter-spacing' && !isNaN(parseFloat(node.style.letterSpacing, 10))) {
+        newStyle = newStyle.add("LETTERSPACING-".concat(unitImportFn(node.style.letterSpacing, 'letter-spacing', source)));
+      } else if (nodeName === 'span' && style === 'text-decoration') {
+        if (node.style.textDecoration === 'line-through') {
+          newStyle = newStyle.add('STRIKETHROUGH');
+        } else if (node.style.textDecoration === 'underline') {
+          newStyle = newStyle.add('UNDERLINE');
+        }
+      } else if (nodeName === 'span' && style === 'font-family') {
+        var fontFamily = options.fontFamilies.find(function (item) {
+          return item.family.toLowerCase() === node.style.fontFamily.toLowerCase();
+        });
+        if (!fontFamily) return;
+        newStyle = newStyle.add("FONTFAMILY-".concat(fontFamily.name.toUpperCase()));
+      }
+    });
+
+    if (nodeName === 'sup') {
+      newStyle = newStyle.add('SUPERSCRIPT');
+    } else if (nodeName === 'sub') {
+      newStyle = newStyle.add('SUBSCRIPT');
+    }
+
+    options.styleImportFn && (newStyle = options.styleImportFn(nodeName, node, newStyle, source) || newStyle);
+    return newStyle;
+  };
+};
+
+var htmlToEntity = function htmlToEntity(options, source) {
+  return function (nodeName, node, createEntity) {
+    if (options && options.entityImportFn) {
+      var customInput = options.entityImportFn(nodeName, node, createEntity, source);
+
+      if (customInput) {
+        return customInput;
+      }
+    }
+
+    nodeName = nodeName.toLowerCase();
+    var alt = node.alt,
+        title = node.title,
+        id = node.id,
+        controls = node.controls,
+        autoplay = node.autoplay,
+        loop = node.loop,
+        poster = node.poster;
+    var meta = {};
+    var nodeAttributes = {};
+    id && (meta.id = id);
+    alt && (meta.alt = alt);
+    title && (meta.title = title);
+    controls && (meta.controls = controls);
+    autoplay && (meta.autoPlay = autoplay);
+    loop && (meta.loop = loop);
+    poster && (meta.poster = poster);
+    node.attributes && Object.keys(node.attributes).forEach(function (key) {
+      var attr = node.attributes[key];
+      ignoredEntityNodeAttributes.indexOf(attr.name) === -1 && (nodeAttributes[attr.name] = attr.value);
+    });
+
+    if (nodeName === 'a' && !node.querySelectorAll('img').length) {
+      var href = node.getAttribute('href');
+      var target = node.getAttribute('target');
+      return createEntity('LINK', 'MUTABLE', {
+        href: href,
+        target: target,
+        nodeAttributes: nodeAttributes
+      });
+    } else if (nodeName === 'audio') {
+      return createEntity('AUDIO', 'IMMUTABLE', {
+        url: node.getAttribute('src'),
+        meta: meta,
+        nodeAttributes: nodeAttributes
+      });
+    } else if (nodeName === 'video') {
+      return createEntity('VIDEO', 'IMMUTABLE', {
+        url: node.getAttribute('src'),
+        meta: meta,
+        nodeAttributes: nodeAttributes
+      });
+    } else if (nodeName === 'img') {
+      var parentNode = node.parentNode;
+      var entityData = {
+        meta: meta
+      };
+      var _node$style = node.style,
+          width = _node$style.width,
+          height = _node$style.height;
+      entityData.url = node.getAttribute('src');
+      width && (entityData.width = width);
+      height && (entityData.height = height);
+
+      if (parentNode.nodeName.toLowerCase() === 'a') {
+        entityData.link = parentNode.getAttribute('href');
+        entityData.link_target = parentNode.getAttribute('target');
+      }
+
+      return createEntity('IMAGE', 'IMMUTABLE', entityData);
+    } else if (nodeName === 'hr') {
+      return createEntity('HR', 'IMMUTABLE', {});
+    } else if (node.parentNode && node.parentNode.classList.contains('embed-wrap')) {
+      var embedContent = node.innerHTML || node.outerHTML;
+
+      if (embedContent) {
+        return createEntity('EMBED', 'IMMUTABLE', {
+          url: embedContent
+        });
+      }
+    }
+  };
+};
+
+var htmlToBlock = function htmlToBlock(options, source) {
+  return function (nodeName, node) {
+    if (options && options.blockImportFn) {
+      var customInput = options.blockImportFn(nodeName, node, source);
+
+      if (customInput) {
+        return customInput;
+      }
+    }
+
+    var nodeAttributes = {};
+    var nodeStyle = node.style || {};
+    node.attributes && Object.keys(node.attributes).forEach(function (key) {
+      var attr = node.attributes[key];
+      ignoredNodeAttributes.indexOf(attr.name) === -1 && (nodeAttributes[attr.name] = attr.value);
+    });
+
+    if (node.classList && node.classList.contains('media-wrap')) {
+      return {
+        type: 'atomic',
+        data: {
+          nodeAttributes: nodeAttributes,
+          float: nodeStyle.float,
+          alignment: nodeStyle.textAlign
+        }
+      };
+    } else if (nodeName === 'img') {
+      return {
+        type: 'atomic',
+        data: {
+          nodeAttributes: nodeAttributes,
+          float: nodeStyle.float,
+          alignment: nodeStyle.textAlign
+        }
+      };
+    } else if (nodeName === 'hr') {
+      return {
+        type: 'atomic',
+        data: {
+          nodeAttributes: nodeAttributes
+        }
+      };
+    } else if (nodeName === 'pre') {
+      node.innerHTML = node.innerHTML.replace(/<code(.*?)>/g, '').replace(/<\/code>/g, '');
+      return {
+        type: 'code-block',
+        data: {
+          nodeAttributes: nodeAttributes
+        }
+      };
+    } else if (blockNames.indexOf(nodeName) !== -1) {
+      var blockData = {
+        nodeAttributes: nodeAttributes
+      };
+
+      if (nodeStyle.textAlign) {
+        blockData.textAlign = nodeStyle.textAlign;
+      }
+
+      if (nodeStyle.textIndent) {
+        blockData.textIndent = /^\d+em$/.test(nodeStyle.textIndent) ? Math.ceil(parseInt(nodeStyle.textIndent, 10) / 2) : 1;
+      }
+
+      return {
+        type: blockTypes[blockNames.indexOf(nodeName)],
+        data: blockData
+      };
+    }
+  };
+};
+
+var getToHTMLConfig = function getToHTMLConfig(options) {
+  return {
+    styleToHTML: configs_styleToHTML(options),
+    entityToHTML: configs_entityToHTML(options),
+    blockToHTML: configs_blockToHTML(options)
+  };
+};
+var getFromHTMLConfig = function getFromHTMLConfig(options) {
+  var source = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'unknow';
+  return {
+    htmlToStyle: htmlToStyle(options, source),
+    htmlToEntity: htmlToEntity(options, source),
+    htmlToBlock: htmlToBlock(options, source)
+  };
+};
+// CONCATENATED MODULE: ./convert/index.js
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty_default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+/* eslint-disable no-param-reassign */
+
+/* eslint-disable comma-dangle */
+
+
+
+var defaultConvertOptions = {
+  fontFamilies: defaultFontFamilies
+};
+var convert_convertRawToHTML = function convertRawToHTML(rawContent, options) {
+  options = _objectSpread({}, defaultConvertOptions, {}, options);
+
+  try {
+    var contentState = Object(external_draft_js_["convertFromRaw"])(rawContent);
+    options.contentState = contentState;
+    return Object(external_draft_convert_["convertToHTML"])(getToHTMLConfig(options))(contentState);
+  } catch (error) {
+    console.warn(error);
+    return '';
+  }
+};
+var convert_convertHTMLToRaw = function convertHTMLToRaw(HTMLString, options, source) {
+  options = _objectSpread({}, defaultConvertOptions, {}, options);
+
+  try {
+    var contentState = Object(external_draft_convert_["convertFromHTML"])(getFromHTMLConfig(options, source))(HTMLString);
+    return Object(external_draft_js_["convertToRaw"])(contentState);
+  } catch (error) {
+    console.warn(error);
+    return {};
+  }
+};
+var convert_convertEditorStateToHTML = function convertEditorStateToHTML(editorState, options) {
+  options = _objectSpread({}, defaultConvertOptions, {}, options);
+
+  try {
+    var contentState = editorState.getCurrentContent();
+    options.contentState = contentState;
+    return Object(external_draft_convert_["convertToHTML"])(getToHTMLConfig(options))(contentState);
+  } catch (error) {
+    console.warn(error);
+    return '';
+  }
+};
+var convert_convertHTMLToEditorState = function convertHTMLToEditorState(HTMLString, editorDecorators, options, source) {
+  options = _objectSpread({}, defaultConvertOptions, {}, options);
+
+  try {
+    var content = Object(external_draft_convert_["convertFromHTML"])(getFromHTMLConfig(options, source))(HTMLString);
+    console.log('con', Object(external_draft_convert_["convertToHTML"])(content));
+    return external_draft_js_["EditorState"].createWithContent(content, editorDecorators);
+  } catch (error) {
+    console.warn(error);
+    return external_draft_js_["EditorState"].createEmpty(editorDecorators);
+  }
+};
+var convert_convertEditorStateToRaw = function convertEditorStateToRaw(editorState) {
+  return Object(external_draft_js_["convertToRaw"])(editorState.getCurrentContent());
+};
+var convert_convertRawToEditorState = function convertRawToEditorState(rawContent, editorDecorators) {
+  try {
+    console.log(Object(external_draft_convert_["convertToHTML"])(Object(external_draft_js_["convertFromRaw"])(rawContent)));
+    return external_draft_js_["EditorState"].createWithContent(Object(external_draft_js_["convertFromRaw"])(rawContent), editorDecorators);
+  } catch (error) {
+    console.warn(error);
+    return external_draft_js_["EditorState"].createEmpty(editorDecorators);
+  }
+};
+// CONCATENATED MODULE: ./helpers/extension.js
+
+
+function extension_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function extension_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { extension_ownKeys(Object(source), true).forEach(function (key) { defineProperty_default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { extension_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 /* eslint-disable no-param-reassign */
 // TODO
@@ -2393,7 +3236,7 @@ var extension_useExtension = function useExtension(extension) {
       extension_extensionControls.push({
         includeEditors: includeEditors,
         excludeEditors: excludeEditors,
-        data: _objectSpread({
+        data: extension_objectSpread({
           key: inlineStyleName,
           type: 'inline-style',
           command: inlineStyleName
@@ -2452,7 +3295,7 @@ var extension_useExtension = function useExtension(extension) {
       extension_extensionControls.push({
         includeEditors: includeEditors,
         excludeEditors: excludeEditors,
-        data: _objectSpread({}, typeof extension.control === 'function' && _objectSpread({
+        data: extension_objectSpread({}, typeof extension.control === 'function' && extension_objectSpread({
           key: entityType,
           type: 'entity',
           command: entityType,
@@ -2572,9 +3415,6 @@ var createExtensibleEditor = function createExtensibleEditor(BraftEditor) {
 var external_immutable_ = __webpack_require__(14);
 var external_immutable_default = /*#__PURE__*/__webpack_require__.n(external_immutable_);
 
-// EXTERNAL MODULE: external "draft-js"
-var external_draft_js_ = __webpack_require__(6);
-
 // CONCATENATED MODULE: ./renderers/block/blockRenderMap.js
 
 
@@ -2615,12 +3455,8 @@ var external_draft_js_ = __webpack_require__(6);
   return customBlockRenderMap;
 });
 // EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/classCallCheck.js
-var classCallCheck = __webpack_require__(7);
+var classCallCheck = __webpack_require__(8);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
-
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/extends.js
-var helpers_extends = __webpack_require__(8);
-var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(15);
@@ -3634,7 +4470,7 @@ Image_Image.propTypes = {
 };
 /* harmony default export */ var atomics_Image = (Image_Image);
 // EXTERNAL MODULE: external "react-dom"
-var external_react_dom_ = __webpack_require__(18);
+var external_react_dom_ = __webpack_require__(19);
 var external_react_dom_default = /*#__PURE__*/__webpack_require__.n(external_react_dom_);
 
 // EXTERNAL MODULE: ./components/common/Modal/style.scss
@@ -4378,7 +5214,7 @@ function inlineStyleMap_objectSpread(target) { for (var i = 1; i < arguments.len
 // CONCATENATED MODULE: ./renderers/inline/inlineStyleFn.js
 
 
-var getStyleValue = function getStyleValue(style) {
+var inlineStyleFn_getStyleValue = function getStyleValue(style) {
   return style.split('-')[1];
 };
 
@@ -4395,20 +5231,20 @@ var getStyleValue = function getStyleValue(style) {
     output = customStyleFn ? customStyleFn(styles, block, output) : {};
     styles.forEach(function (style) {
       if (style.indexOf('COLOR-') === 0) {
-        output.color = "#".concat(getStyleValue(style));
+        output.color = "#".concat(inlineStyleFn_getStyleValue(style));
       } else if (style.indexOf('BGCOLOR-') === 0) {
-        output.backgroundColor = "#".concat(getStyleValue(style));
+        output.backgroundColor = "#".concat(inlineStyleFn_getStyleValue(style));
       } else if (style.indexOf('FONTSIZE-') === 0) {
-        output.fontSize = unitExportFn(getStyleValue(style), 'font-size', 'editor');
+        output.fontSize = unitExportFn(inlineStyleFn_getStyleValue(style), 'font-size', 'editor');
       } else if (style.indexOf('LINEHEIGHT-') === 0) {
-        output.lineHeight = unitExportFn(getStyleValue(style), 'line-height', 'editor');
+        output.lineHeight = unitExportFn(inlineStyleFn_getStyleValue(style), 'line-height', 'editor');
       } else if (style.indexOf('LETTERSPACING-') === 0) {
-        output.letterSpacing = unitExportFn(getStyleValue(style), 'letter-spacing', 'editor');
+        output.letterSpacing = unitExportFn(inlineStyleFn_getStyleValue(style), 'letter-spacing', 'editor');
       } else if (style.indexOf('TEXTINDENT-') === 0) {
-        output.textIndent = unitExportFn(getStyleValue(style), 'text-indent', 'editor');
+        output.textIndent = unitExportFn(inlineStyleFn_getStyleValue(style), 'text-indent', 'editor');
       } else if (style.indexOf('FONTFAMILY-') === 0) {
         output.fontFamily = (fontFamilies.find(function (item) {
-          return item.name.toUpperCase() === getStyleValue(style);
+          return item.name.toUpperCase() === inlineStyleFn_getStyleValue(style);
         }) || {}).family || '';
       }
     });
@@ -4422,10 +5258,6 @@ var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableA
 // EXTERNAL MODULE: ../node_modules/draft-js-multidecorators/index.js
 var draft_js_multidecorators = __webpack_require__(21);
 var draft_js_multidecorators_default = /*#__PURE__*/__webpack_require__.n(draft_js_multidecorators);
-
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/objectWithoutProperties.js
-var objectWithoutProperties = __webpack_require__(19);
-var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
 
 // CONCATENATED MODULE: ./renderers/decorators/Link/index.jsx
 
@@ -6345,7 +7177,7 @@ var maps_getHeadings = function getHeadings(lang) {
     command: 'unstyled'
   }];
 };
-var blocks = {
+var maps_blocks = {
   'header-one': 'h1',
   'header-two': 'h2',
   'header-three': 'h3',
@@ -8348,7 +9180,6 @@ function index_objectSpread(target) { for (var i = 1; i < arguments.length; i++)
 
 
 
-
 external_draft_js_["EditorState"].prototype.setConvertOptions = function setConvertOptions() {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   this.convertOptions = options;
@@ -8357,11 +9188,11 @@ external_draft_js_["EditorState"].prototype.setConvertOptions = function setConv
 external_draft_js_["EditorState"].prototype.toHTML = function toHTML() {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var convertOptions = this.convertOptions || {};
-  return Object(external_braft_convert_["convertEditorStateToHTML"])(this, index_objectSpread({}, convertOptions, {}, options));
+  return convert_convertEditorStateToHTML(this, index_objectSpread({}, convertOptions, {}, options));
 };
 
 external_draft_js_["EditorState"].prototype.toRAW = function toRAW(noStringify) {
-  return noStringify ? Object(external_draft_js_["convertToRaw"])(this.getCurrentContent()) : JSON.stringify(Object(external_braft_convert_["convertEditorStateToRaw"])(this));
+  return noStringify ? convert_convertEditorStateToRaw(this) : JSON.stringify(convert_convertEditorStateToRaw(this));
 };
 
 external_draft_js_["EditorState"].prototype.toText = function toText() {
@@ -8388,24 +9219,26 @@ external_draft_js_["EditorState"].createFrom = function (content) {
   }
 
   if (typeof_default()(content) === 'object' && content && content.blocks && content.entityMap) {
-    editorState = Object(external_braft_convert_["convertRawToEditorState"])(content, getDecorators(customOptions.editorId));
+    editorState = convert_convertRawToEditorState(content, getDecorators(customOptions.editorId));
   }
 
   if (typeof content === 'string') {
     try {
       if (/^(-)?\d+$/.test(content)) {
-        editorState = Object(external_braft_convert_["convertHTMLToEditorState"])(content, getDecorators(customOptions.editorId), customOptions, 'create');
+        editorState = convert_convertHTMLToEditorState(content, getDecorators(customOptions.editorId), customOptions, 'create');
       } else {
         editorState = external_draft_js_["EditorState"].createFrom(JSON.parse(content), customOptions);
       }
     } catch (error) {
-      editorState = Object(external_braft_convert_["convertHTMLToEditorState"])(content, getDecorators(customOptions.editorId), customOptions, 'create');
+      editorState = convert_convertHTMLToEditorState(content, getDecorators(customOptions.editorId), customOptions, 'create');
     }
   }
 
   if (typeof content === 'number') {
-    editorState = Object(external_braft_convert_["convertHTMLToEditorState"])(content.toLocaleString().replace(/,/g, ''), getDecorators(customOptions.editorId), customOptions, 'create');
-  } else {
+    editorState = convert_convertHTMLToEditorState(content.toLocaleString().replace(/,/g, ''), getDecorators(customOptions.editorId), customOptions, 'create');
+  }
+
+  if (typeof content !== 'number' && typeof content !== 'string' && typeof_default()(content) !== 'object') {
     editorState = external_draft_js_["EditorState"].createEmpty(getDecorators(customOptions.editorId));
   }
 
