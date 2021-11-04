@@ -6,6 +6,7 @@ import {
 } from 'draft-js'
 import * as Immutable from 'immutable'
 import * as React from 'react'
+import { ColorUtils, ContentUtils, BaseUtils } from './src/braft-utils-v2';
 
 export type EditorState = _EditorState & {
   [key: string]: any;
@@ -16,7 +17,7 @@ export type EditorState = _EditorState & {
   isEmpty(): boolean;
 };
 
-export { DraftEditorProps };
+export { DraftEditorProps, ColorUtils, ContentUtils, BaseUtils };
 
 export interface BraftEditorProps {
   value?: EditorState;
@@ -85,10 +86,7 @@ export interface BraftEditorProps {
 }
 
 export default class BraftEditor extends React.Component<BraftEditorProps> {
-  static createEditorState(
-    content: string | any,
-    options?: object
-  ): EditorState;
+  static createEditorState(content: string | any, options?: object): EditorState;
   static use(extension: object | object[]): void;
   undo(): void;
   redo(): void;

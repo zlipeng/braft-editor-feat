@@ -16,6 +16,7 @@ import {
 } from 'helpers/extension';
 import { getDecorators } from 'renderers';
 import BraftEditor, { EditorState } from 'editor';
+import { ColorUtils, ContentUtils, BaseUtils } from 'braft-utils-v2';
 
 EditorState.prototype.setConvertOptions = function setConvertOptions(
   options = {},
@@ -108,7 +109,7 @@ EditorState.createFrom = (content, options = {}) => {
       'create',
     );
   }
-  if (typeof content !== 'number' && typeof content !== 'string' && typeof content !== 'object') {
+  if (content === null || (typeof content !== 'number' && typeof content !== 'string' && typeof content !== 'object')) {
     editorState = EditorState.createEmpty(
       getDecorators(customOptions.editorId),
     );
@@ -135,7 +136,7 @@ EditorState.createFrom = (content, options = {}) => {
 BraftEditor.createEditorState = EditorState.createFrom;
 
 export default createExtensibleEditor(BraftEditor);
-export { EditorState, getDecorators };
+export { EditorState, getDecorators, ColorUtils, ContentUtils, BaseUtils };
 
 // 2.1 version development plan
 // [] Optimizing the selection of multiple lines of text is an error when inserting a link

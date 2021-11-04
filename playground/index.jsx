@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // import Table from 'braft-extensions/dist/table';
 // import CodeHighlighter from 'braft-extensions/dist/code-highlighter';
 // import Emoticon, { defaultEmoticons } from 'braft-extensions/dist/emoticon';
-import { convertHTMLToRaw } from '../src/convert'
+// import { convertHTMLToRaw } from '../src/convert'
 // import BraftEditor from '../src_old';
 import BraftEditor from '../src/index';
 // import '../dist/index.css';
@@ -40,13 +40,14 @@ const initContent =
 '<p data-foo="adasd" class="my-classname"><img src="https://www.baidu.com/img/bd_logo1.png?where=super" /><span style="color:#e25041;">asdasdasda</span>asdads</p>';
 */
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       // readOnly: false,
-      editorState: BraftEditor.createEditorState(convertHTMLToRaw('<p>123</p>')),
+      editorState: BraftEditor.createEditorState(null),
     };
   }
 
@@ -59,9 +60,7 @@ class App extends React.Component {
 
   logHTML = () => {
     const html = this.state.editorState.toHTML();
-    console.log(html);
-    const es = BraftEditor.createEditorState(html);
-    console.log(es.toHTML())
+    console.log(html)
   };
 
   logRAW = () => {
@@ -80,8 +79,8 @@ class App extends React.Component {
             placeholder="Hello World!"
             language="zh"
             // fixPlaceholder
-            // allowInsertLinkText
-            // triggerChangeOnMount={false}
+            allowInsertLinkText
+            triggerChangeOnMount={false}
             value={editorState}
             onChange={this.handleChange}
             // readOnly={readOnly}

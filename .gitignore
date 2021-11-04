@@ -40,3 +40,5 @@ nbproject
 .CVS
 .idea
 git-m
+jsconfig.json
+.*
