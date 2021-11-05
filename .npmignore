@@ -11,3 +11,5 @@
 webpack.config.base.js
 webpack.config.js
 webpack.config.prod.js
+jsconfig.json
+.npmrc

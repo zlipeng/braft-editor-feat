@@ -77,7 +77,7 @@ class App extends React.Component {
             // colors={['#e25041']}
             // headings={['header-one', 'unstyled']}
             placeholder="Hello World!"
-            language="zh"
+            language="en"
             // fixPlaceholder
             allowInsertLinkText
             triggerChangeOnMount={false}
