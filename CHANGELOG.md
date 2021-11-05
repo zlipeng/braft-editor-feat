@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/zlipeng/braft-editor-feat/compare/v0.0.9...v0.0.10) (2021-11-05)
+
+
+### Bug Fixes
+
+* 初始值为null时类型判断错误 ([8b042cb](https://github.com/zlipeng/braft-editor-feat/commit/8b042cbdd0f076a2e8061cbb2e3e6a57c892a847))
+* link 弹窗问题 ([bb2c623](https://github.com/zlipeng/braft-editor-feat/commit/bb2c623c97d6c715cf3f94b69cf22034feeaf36d))
+
 ### [0.0.9](https://github.com/zlipeng/braft-editor-feat/compare/v0.0.8...v0.0.9) (2021-11-04)
 
 ### [0.0.8](https://github.com/zlipeng/braft-editor-feat/compare/v0.0.7...v0.0.8) (2021-11-04)
