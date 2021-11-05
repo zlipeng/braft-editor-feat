@@ -231,8 +231,9 @@ export default class ControlBar extends React.Component {
   preventDefault(event) {
     const tagName = event.target.tagName.toLowerCase();
 
-    if (tagName === 'input' || tagName === 'label') {
+    if (tagName === 'input' || tagName === 'label' || tagName === 'button') {
       // ...
+      // event.preventDefault();
     } else {
       event.preventDefault();
     }

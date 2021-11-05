@@ -69,10 +69,6 @@ const LinkEditor = (props) => {
 
     if (textSelected) {
       if (hrefStr) {
-        console.log('set link', {
-          target: targetStr,
-          rel,
-        })
         editor.setValue(
           ContentUtils.toggleSelectionLink(
             editorState,
@@ -109,7 +105,6 @@ const LinkEditor = (props) => {
   };
 
   const handleUnlink = () => {
-    console.log('unlink')
     dropDownInstance.current.hide();
     editor.setValue(
       ContentUtils.toggleSelectionLink(editorState, false, {}),
@@ -117,7 +112,6 @@ const LinkEditor = (props) => {
   };
 
   const handleCancel = () => {
-    console.log('cancel')
     dropDownInstance.current.hide();
   };
 
